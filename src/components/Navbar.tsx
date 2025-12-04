@@ -28,13 +28,31 @@ export default function Navbar() {
             {/* Desktop Menu - Ride & Drive */}
             <div className="hidden lg:flex items-center gap-6">
               <Link
-                href="#ride"
+                href="/"
                 className="py-2 text-gray-700 hover:text-emerald-500 font-medium transition rounded-full"
               >
                 Ride
               </Link>
               <Link
-                href="#drive"
+                href="/zpass"
+                className="py-2 text-gray-700 hover:text-emerald-500 font-medium transition rounded-full"
+              >
+                ZPass
+              </Link>
+              <Link
+                href="/rentals"
+                className="py-2 text-gray-700 hover:text-emerald-500 font-medium transition rounded-full"
+              >
+                Rentals
+              </Link>
+              <Link
+                href="/services"
+                className="py-2 text-gray-700 hover:text-emerald-500 font-medium transition rounded-full"
+              >
+                Services
+              </Link>
+              <Link
+                href="/drive"
                 className="py-2 text-gray-700 hover:text-emerald-500 font-medium transition rounded-full"
               >
                 Drive
@@ -42,23 +60,29 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Right Side - Help, Login, Signup */}
-          <div className="hidden lg:flex items-center gap-2">
+          {/* Right Side - About, Contact, Login, Signup */}
+          <div className="hidden lg:flex items-center gap-4">
             <Link
-              href="#help"
-              className="px-1 py-2 text-gray-700 hover:text-emerald-500 font-medium transition rounded-full"
+              href="/about"
+              className="px-3 py-2 text-gray-700 hover:text-emerald-500 font-medium transition rounded-full"
             >
-              Help
+              About
+            </Link>
+            <Link
+              href="/contact"
+              className="px-3 py-2 text-gray-700 hover:text-emerald-500 font-medium transition rounded-full"
+            >
+              Contact
             </Link>
             <Link
               href="/login"
-              className="px-5 py-2 text-gray-700 hover:text-emerald-500 font-medium transition rounded-full"
+              className="ml-2 px-6 py-2.5 text-gray-700 hover:text-emerald-600 hover:border-emerald-500 font-semibold transition rounded-full border-2 border-gray-300 cursor-pointer"
             >
               Log in
             </Link>
             <Link
               href="/signup"
-              className="px-5 py-2.5 bg-emerald-500 text-white rounded-full hover:bg-emerald-600 font-medium transition shadow-sm"
+              className="px-6 py-2.5 bg-linear-to-r from-emerald-500 to-teal-500 text-white rounded-full hover:from-emerald-600 hover:to-teal-600 font-semibold transition shadow-md cursor-pointer"
             >
               Sign up
             </Link>
@@ -79,25 +103,53 @@ export default function Navbar() {
         <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg">
           <div className="px-4 py-3 space-y-1">
             <Link
-              href="#ride"
+              href="/"
               onClick={() => setIsOpen(false)}
               className="block px-4 py-2.5 text-gray-700 hover:bg-emerald-50 hover:text-emerald-500 rounded-lg transition"
             >
               Ride
             </Link>
             <Link
-              href="#drive"
+              href="/services"
+              onClick={() => setIsOpen(false)}
+              className="block px-4 py-2.5 text-gray-700 hover:bg-emerald-50 hover:text-emerald-500 rounded-lg transition"
+            >
+              Services
+            </Link>
+            <Link
+              href="/rentals"
+              onClick={() => setIsOpen(false)}
+              className="block px-4 py-2.5 text-gray-700 hover:bg-emerald-50 hover:text-emerald-500 rounded-lg transition"
+            >
+              Rentals
+            </Link>
+            <Link
+              href="/zpass"
+              onClick={() => setIsOpen(false)}
+              className="block px-4 py-2.5 text-gray-700 hover:bg-emerald-50 hover:text-emerald-500 rounded-lg transition"
+            >
+              ZPass
+            </Link>
+            <Link
+              href="/drive"
               onClick={() => setIsOpen(false)}
               className="block px-4 py-2.5 text-gray-700 hover:bg-emerald-50 hover:text-emerald-500 rounded-lg transition"
             >
               Drive
             </Link>
             <Link
-              href="#help"
+              href="/about"
               onClick={() => setIsOpen(false)}
               className="block px-4 py-2.5 text-gray-700 hover:bg-emerald-50 hover:text-emerald-500 rounded-lg transition"
             >
-              Help
+              About
+            </Link>
+            <Link
+              href="/contact"
+              onClick={() => setIsOpen(false)}
+              className="block px-4 py-2.5 text-gray-700 hover:bg-emerald-50 hover:text-emerald-500 rounded-lg transition"
+            >
+              Contact
             </Link>
             <div className="border-t border-gray-200 my-2"></div>
             <Link

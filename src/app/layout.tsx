@@ -9,8 +9,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Zproo",
-  description: "Zproo"
+  title: "Zproo - Ride Electrified",
+  description:
+    "Premium Electric Vehicle Transportation - Ride Electrified with Zproo"
 };
 
 export default function RootLayout({

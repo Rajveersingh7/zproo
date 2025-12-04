@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import {useState} from "react";
 import {motion} from "framer-motion";
 import {useEffect} from "react";
+import Lottie from "lottie-react";
+import airplaneAnimation from "@/../public/animations/airplane.json";
 import {
   Leaf,
   DollarSign,
@@ -12,9 +12,9 @@ import {
   Smartphone,
   MapPin,
   CheckCircle,
-  Battery,
-  Zap,
-  ChevronDown
+  ChevronDown,
+  Navigation,
+  IndianRupee
 } from "lucide-react";
 
 export default function Home() {
@@ -66,73 +66,17 @@ export default function Home() {
       icon: CheckCircle,
       title: "Reach Your Destination",
       description:
-        "Enjoy a comfortable, eco-friendly ride in our Tata Xpres T EV vehicles. Pay seamlessly and rate your experience."
-    }
-  ];
-
-  const features = [
-    {
-      icon: Battery,
-      title: "Long Range",
-      description: "Up to 213 km on a single charge"
-    },
-    {
-      icon: Zap,
-      title: "Fast Charging",
-      description: "0-80% charge in just 90 minutes"
-    },
-    {
-      icon: Leaf,
-      title: "Zero Emissions",
-      description: "100% electric, 0% pollution"
-    },
-    {
-      icon: Shield,
-      title: "Safety First",
-      description: "Advanced safety features & monitoring"
-    }
-  ];
-
-  const faqs = [
-    {
-      question: "What is Zproo?",
-      answer:
-        "Zproo is Pune's premier electric vehicle transportation service. We provide eco-friendly, comfortable, and affordable rides using 100% electric Tata Xpres T EV vehicles."
-    },
-    {
-      question: "How do I book a ride?",
-      answer:
-        "You can book a ride through our website or mobile app. Simply enter your pickup and drop location, confirm the fare, and a driver will be assigned to you within minutes."
-    },
-    {
-      question: "What are the payment options?",
-      answer:
-        "We accept multiple payment methods including cash, UPI, credit/debit cards, and digital wallets. Payment can be made directly through the app or to the driver."
-    },
-    {
-      question: "Are your vehicles air-conditioned?",
-      answer:
-        "Yes! All our Tata Xpres T EV vehicles come with air conditioning to ensure your comfort during the ride."
-    },
-    {
-      question: "How can I become a driver with Zproo?",
-      answer:
-        "Click on 'Become a Driver' button on our homepage and fill out the application form. Our team will contact you with the next steps including verification and training."
-    },
-    {
-      question: "Is there 24/7 customer support?",
-      answer:
-        "Yes, we provide round-the-clock customer support. You can reach us through the app, website, or our helpline number for any assistance."
+        "Enjoy a comfortable, eco-friendly ride in our electric vehicles. Pay seamlessly and rate your experience."
     }
   ];
 
   return (
     <main>
-      {/* Hero Section - Mobile Optimized */}
-      <section className="relative min-h-[85vh] sm:min-h-[90vh] lg:h-[calc(100vh-5rem)] flex items-center justify-center overflow-hidden bg-linear-to-br from-emerald-50 via-white to-teal-50 px-4 sm:px-6 lg:px-8">
-        {/* Animated Background Blobs - Hidden on mobile for performance */}
+      {/* Hero Section - Split Layout */}
+      <section className="relative min-h-[90vh] lg:h-[calc(100vh-5rem)] flex items-center overflow-hidden bg-linear-to-br from-emerald-50 via-white to-teal-50">
+        {/* Animated Background Blobs */}
         <motion.div
-          className="absolute top-10 sm:top-20 left-5 sm:left-10 w-48 h-48 sm:w-72 sm:h-72 bg-emerald-400/20 rounded-full blur-3xl hidden sm:block"
+          className="absolute top-20 left-10 w-72 h-72 bg-emerald-400/20 rounded-full blur-3xl hidden lg:block"
           animate={{
             scale: [1, 1.2, 1],
             x: [0, 50, 0],
@@ -145,7 +89,7 @@ export default function Home() {
           }}
         />
         <motion.div
-          className="absolute bottom-10 sm:bottom-20 right-5 sm:right-10 w-60 h-60 sm:w-96 sm:h-96 bg-teal-400/20 rounded-full blur-3xl hidden sm:block"
+          className="absolute bottom-20 right-10 w-96 h-96 bg-teal-400/20 rounded-full blur-3xl hidden lg:block"
           animate={{
             scale: [1, 1.3, 1],
             x: [0, -50, 0],
@@ -158,76 +102,145 @@ export default function Home() {
           }}
         />
 
-        <div className="max-w-7xl mx-auto relative z-10 w-full">
-          <div className="text-center max-w-4xl mx-auto">
-            {/* Animated Badge */}
+        <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+            {/* Left Section - Booking Form */}
             <motion.div
-              initial={{opacity: 0, y: -20}}
-              animate={{opacity: 1, y: 0}}
-              transition={{duration: 0.6}}
-              className="inline-block mb-4 sm:mb-6"
+              initial={{opacity: 0, x: -50}}
+              animate={{opacity: 1, x: 0}}
+              transition={{duration: 0.8}}
+              className="order-2 lg:order-1 flex"
             >
-              <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-emerald-100 text-emerald-700 rounded-full text-xs sm:text-sm font-semibold">
-                🌱 100% Electric • Zero Emissions
-              </span>
+              <div className="bg-white rounded-3xl shadow-2xl shadow-emerald-500/10 p-8 sm:p-10 border border-gray-100 w-full flex flex-col justify-between h-full">
+                <div>
+                  <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-8">
+                    Book Your Ride
+                  </h2>
+
+                  <div className="space-y-6">
+                    {/* Pickup Location */}
+                    <div>
+                      <label className="block text-base font-semibold text-gray-700 mb-3">
+                        <div className="flex items-center gap-2">
+                          <MapPin className="h-5 w-5 text-emerald-500" />
+                          Pickup Location
+                        </div>
+                      </label>
+                      <input
+                        type="text"
+                        placeholder="Enter pickup location"
+                        className="w-full px-5 py-4 text-base border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition text-gray-900 placeholder:text-gray-400"
+                      />
+                    </div>
+
+                    {/* Dropoff Location */}
+                    <div>
+                      <label className="block text-base font-semibold text-gray-700 mb-3">
+                        <div className="flex items-center gap-2">
+                          <Navigation className="h-5 w-5 text-teal-500" />
+                          Dropoff Location
+                        </div>
+                      </label>
+                      <input
+                        type="text"
+                        placeholder="Enter dropoff location"
+                        className="w-full px-5 py-4 text-base border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition text-gray-900 placeholder:text-gray-400"
+                      />
+                    </div>
+
+                    {/* See Prices Button */}
+                    <motion.button
+                      whileHover={{scale: 1.02}}
+                      whileTap={{scale: 0.98}}
+                      className="cursor-pointer w-full bg-linear-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white rounded-xl py-5 px-6 font-bold text-xl shadow-lg shadow-emerald-500/30 transition-all flex items-center justify-center gap-2"
+                    >
+                      <IndianRupee className="h-6 w-6" />
+                      See Prices
+                    </motion.button>
+                  </div>
+                </div>
+
+                {/* Quick Info */}
+                <div className="pt-6 border-t border-gray-200 mt-8">
+                  <div className="grid grid-cols-3 gap-4 text-center">
+                    <div>
+                      <div className="text-emerald-600 text-base font-semibold">
+                        100% Electric
+                      </div>
+                      <div className="text-sm text-gray-500 mt-1">
+                        Eco-Friendly
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-teal-600 text-base font-semibold">
+                        Safe & Secure
+                      </div>
+                      <div className="text-sm text-gray-500 mt-1">
+                        GPS Tracking
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-emerald-600 text-base font-semibold">
+                        24/7 Support
+                      </div>
+                      <div className="text-sm text-gray-500 mt-1">
+                        Always Here
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </motion.div>
 
-            {/* Main Heading - Responsive text sizes */}
-            <motion.h1
-              initial={{opacity: 0, y: 20}}
-              animate={{opacity: 1, y: 0}}
-              transition={{duration: 0.8, delay: 0.2}}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 bg-linear-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent leading-tight px-2"
-            >
-              Go Green, Ride Clean
-            </motion.h1>
-
-            {/* Subheading - Responsive */}
-            <motion.p
-              initial={{opacity: 0, y: 20}}
-              animate={{opacity: 1, y: 0}}
-              transition={{duration: 0.8, delay: 0.4}}
-              className="text-base sm:text-xl md:text-2xl text-gray-600 mb-6 sm:mb-10 max-w-3xl mx-auto px-4"
-            >
-              Premium Electric Vehicle Transportation
-            </motion.p>
-
-            {/* CTA Buttons - Mobile Optimized */}
+            {/* Right Section - Slogan & Info */}
             <motion.div
-              initial={{opacity: 0, y: 20}}
-              animate={{opacity: 1, y: 0}}
-              transition={{duration: 0.8, delay: 0.6}}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center max-w-md sm:max-w-none mx-auto"
+              initial={{opacity: 0, x: 50}}
+              animate={{opacity: 1, x: 0}}
+              transition={{duration: 0.8, delay: 0.2}}
+              className="order-1 lg:order-2 text-center flex flex-col items-center justify-center"
             >
-              <Link href="/ride" className="w-full sm:w-auto">
-                <motion.button
-                  whileHover={{scale: 1.05}}
-                  whileTap={{scale: 0.95}}
-                  className="cursor-pointer w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white rounded-full text-base sm:text-lg px-8 sm:px-10 py-3.5 sm:py-4 font-semibold transition-all shadow-lg shadow-emerald-500/30 flex items-center justify-center gap-2"
-                >
-                  Book Your Ride
-                </motion.button>
-              </Link>
-              <Link href="/driver" className="w-full sm:w-auto">
-                <motion.button
-                  whileHover={{scale: 1.05}}
-                  whileTap={{scale: 0.95}}
-                  className="cursor-pointer w-full sm:w-auto border-2 border-emerald-500 text-emerald-600 hover:bg-emerald-50 rounded-full text-base sm:text-lg px-8 sm:px-10 py-3.5 sm:py-4 font-semibold transition-all"
-                >
-                  Become a Driver
-                </motion.button>
-              </Link>
+              {/* Badge */}
+              <div className="inline-block mb-6">
+                <span className="px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold">
+                  🌱 100% Electric • Zero Emissions
+                </span>
+              </div>
+
+              {/* Main Heading */}
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 bg-linear-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent leading-tight">
+                Ride Electrified
+              </h1>
+
+              {/* Subheading */}
+              <p className="text-xl sm:text-2xl text-gray-600 max-w-xl mx-auto mb-12">
+                Premium Electric Vehicle Transportation
+              </p>
+
+              {/* Lottie Animation */}
+              <motion.div
+                initial={{opacity: 0, scale: 0.8}}
+                animate={{opacity: 1, scale: 1}}
+                transition={{duration: 0.8, delay: 0.4}}
+                className="w-full max-w-md mx-auto"
+              >
+                <Lottie
+                  animationData={airplaneAnimation}
+                  loop={true}
+                  autoplay={true}
+                  className="w-full h-auto"
+                />
+              </motion.div>
             </motion.div>
           </div>
         </div>
 
-        {/* Scroll Indicator - Hidden on small mobile */}
+        {/* Scroll Indicator */}
         <motion.div
           animate={{y: [0, 10, 0]}}
           transition={{duration: 2, repeat: Infinity}}
-          className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 hidden sm:block"
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden lg:block"
         >
-          <ChevronDown className="h-6 w-6 sm:h-8 sm:w-8 text-emerald-500" />
+          <ChevronDown className="h-8 w-8 text-emerald-500" />
         </motion.div>
       </section>
 
@@ -334,9 +347,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Tata Xpres-T EV Section - Mobile Optimized */}
+      {/* Quick Questions Section */}
       <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-emerald-50 to-teal-50">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{opacity: 0, y: 20}}
             whileInView={{opacity: 1, y: 0}}
@@ -344,137 +357,101 @@ export default function Home() {
             transition={{duration: 0.6}}
             className="text-center mb-8 sm:mb-12"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 bg-linear-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent pb-2">
-              Powered by Tata Xpres-T EV
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 bg-linear-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+              Quick Questions?
             </h2>
-            <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-              Experience the future of urban mobility with India&apos;s most
-              trusted electric vehicle
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600">
+              Get instant answers or reach out to our support team
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
-            {/* Features Section - Mobile Grid */}
-            <div className="grid grid-cols-2 gap-4 sm:gap-6 order-2 lg:order-1">
-              {features.map((feature, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{opacity: 0, scale: 0.9}}
-                  whileInView={{opacity: 1, scale: 1}}
-                  viewport={{once: true}}
-                  transition={{duration: 0.4, delay: idx * 0.1}}
-                  whileHover={{y: -5}}
-                  className="bg-white p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-emerald-100"
-                >
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-emerald-100 rounded-lg sm:rounded-xl flex items-center justify-center mb-3 sm:mb-4">
-                    <feature.icon className="h-5 w-5 sm:h-6 sm:w-6 text-emerald-600" />
-                  </div>
-                  <h3 className="text-base sm:text-lg font-semibold mb-1.5 sm:mb-2 text-gray-900">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-                    {feature.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Car Image - Mobile Optimized */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
             <motion.div
-              initial={{opacity: 0, x: 50}}
-              whileInView={{opacity: 1, x: 0}}
+              initial={{opacity: 0, y: 20}}
+              whileInView={{opacity: 1, y: 0}}
               viewport={{once: true}}
-              transition={{duration: 0.6}}
-              className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden bg-linear-to-br from-emerald-100 to-teal-100 shadow-xl order-1 lg:order-2"
-              style={{aspectRatio: "3/2"}}
+              transition={{delay: 0.1}}
+              className="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-6 shadow-lg border border-emerald-100"
             >
-              <Image
-                src="/car.png"
-                alt="Tata Xpres-T EV"
-                width={1536}
-                height={1024}
-                className="w-full h-full object-cover"
-                priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 768px"
-              />
+              <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">🚗</div>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-900">
+                Book a Ride
+              </h3>
+              <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">
+                Instant electric vehicle rides across Pune. Download the app or
+                book online.
+              </p>
+              <Link
+                href="/"
+                className="text-emerald-600 font-semibold hover:text-emerald-700"
+              >
+                Book Now →
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{opacity: 0, y: 20}}
+              whileInView={{opacity: 1, y: 0}}
+              viewport={{once: true}}
+              transition={{delay: 0.2}}
+              className="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-6 shadow-lg border border-emerald-100"
+            >
+              <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">🎫</div>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-900">
+                Get ZPass
+              </h3>
+              <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">
+                Save up to 40% with our subscription passes for regular
+                commuters.
+              </p>
+              <Link
+                href="/zpass"
+                className="text-emerald-600 font-semibold hover:text-emerald-700"
+              >
+                Learn More →
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{opacity: 0, y: 20}}
+              whileInView={{opacity: 1, y: 0}}
+              viewport={{once: true}}
+              transition={{delay: 0.3}}
+              className="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-6 shadow-lg border border-emerald-100"
+            >
+              <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">💬</div>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-900">
+                Need Help?
+              </h3>
+              <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">
+                Our support team is available 24/7 to assist you with any
+                questions.
+              </p>
+              <Link
+                href="/contact"
+                className="text-emerald-600 font-semibold hover:text-emerald-700"
+              >
+                Contact Us →
+              </Link>
             </motion.div>
           </div>
-        </div>
-      </section>
 
-      {/* FAQ Section - Mobile Optimized */}
-      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{opacity: 0, y: 20}}
             whileInView={{opacity: 1, y: 0}}
             viewport={{once: true}}
-            transition={{duration: 0.6}}
-            className="text-center mb-10 sm:mb-16"
+            transition={{delay: 0.4}}
+            className="text-center"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-gray-900">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-base sm:text-xl text-gray-600 px-4">
-              Find answers to common questions about Zproo
-            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-white text-emerald-600 border-2 border-emerald-500 hover:bg-emerald-50 rounded-full px-8 py-4 font-semibold transition-all shadow-md cursor-pointer"
+            >
+              View All FAQs
+            </Link>
           </motion.div>
-
-          <div className="space-y-3 sm:space-y-4">
-            {faqs.map((faq, idx) => (
-              <motion.div
-                key={idx}
-                initial={{opacity: 0, y: 20}}
-                whileInView={{opacity: 1, y: 0}}
-                viewport={{once: true}}
-                transition={{duration: 0.4, delay: idx * 0.05}}
-              >
-                <FAQItem question={faq.question} answer={faq.answer} />
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
     </main>
-  );
-}
-
-function FAQItem({question, answer}: {question: string; answer: string}) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <motion.div
-      className="border border-gray-200 bg-white rounded-xl sm:rounded-2xl shadow-sm overflow-hidden"
-      whileHover={{boxShadow: "0 10px 40px rgba(5, 150, 105, 0.1)"}}
-    >
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-4 sm:px-6 py-4 sm:py-6 flex justify-between items-start sm:items-center text-left hover:bg-emerald-50/50 transition-colors gap-3"
-      >
-        <span className="text-base sm:text-lg font-semibold text-gray-900 pr-2">
-          {question}
-        </span>
-        <motion.div
-          animate={{rotate: isOpen ? 180 : 0}}
-          transition={{duration: 0.3}}
-          className="shrink-0 mt-0.5 sm:mt-0"
-        >
-          <ChevronDown className="h-5 w-5 text-emerald-600" />
-        </motion.div>
-      </button>
-      <motion.div
-        initial={false}
-        animate={{
-          height: isOpen ? "auto" : 0,
-          opacity: isOpen ? 1 : 0
-        }}
-        transition={{duration: 0.3}}
-        className="overflow-hidden"
-      >
-        <div className="px-4 sm:px-6 pb-4 sm:pb-6 text-sm sm:text-base text-gray-600 leading-relaxed">
-          {answer}
-        </div>
-      </motion.div>
-    </motion.div>
   );
 }
