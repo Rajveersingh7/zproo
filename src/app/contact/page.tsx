@@ -79,7 +79,7 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-emerald-50 via-white to-teal-50 overflow-hidden">
+      <section className="relative pt-32 pb-20 lg:pt-36 lg:pb-28 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-emerald-50 via-white to-teal-50 overflow-hidden">
         <motion.div
           className="absolute top-20 right-10 w-96 h-96 bg-emerald-400/20 rounded-full blur-3xl"
           animate={{
@@ -375,32 +375,6 @@ export default function ContactPage() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* FAQ Teaser */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{opacity: 0, y: 20}}
-            whileInView={{opacity: 1, y: 0}}
-            viewport={{once: true}}
-          >
-            <h2 className="text-4xl font-bold mb-6 text-gray-900">
-              Have a Quick Question?
-            </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Check out our FAQ section for instant answers to common questions
-            </p>
-            <motion.a
-              href="/#faq"
-              whileHover={{scale: 1.05}}
-              whileTap={{scale: 0.95}}
-              className="inline-block bg-linear-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white rounded-full text-lg px-10 py-4 font-bold shadow-lg shadow-emerald-500/30 transition-all"
-            >
-              View FAQ
-            </motion.a>
-          </motion.div>
         </div>
       </section>
     </main>

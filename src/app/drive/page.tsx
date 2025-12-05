@@ -110,7 +110,7 @@ export default function DrivePage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-emerald-50 via-white to-teal-50 overflow-hidden">
+      <section className="relative pt-32 pb-20 lg:pt-36 lg:pb-28 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-emerald-50 via-white to-teal-50 overflow-hidden">
         <motion.div
           className="absolute top-20 right-10 w-96 h-96 bg-teal-400/20 rounded-full blur-3xl"
           animate={{
@@ -151,16 +151,16 @@ export default function DrivePage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button
-                whileHover={{scale: 1.05}}
+                whileHover={{scale: 1.05, y: -2}}
                 whileTap={{scale: 0.95}}
-                className="cursor-pointer bg-linear-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white rounded-full text-lg px-10 py-4 font-semibold transition-all shadow-lg shadow-emerald-500/30"
+                className="cursor-pointer bg-linear-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white rounded-full text-lg px-10 py-4 font-semibold transition-all shadow-lg shadow-emerald-500/30 hover:shadow-xl hover:shadow-emerald-500/40 btn-glow"
               >
                 Apply Now
               </motion.button>
               <motion.button
-                whileHover={{scale: 1.05}}
+                whileHover={{scale: 1.05, y: -2}}
                 whileTap={{scale: 0.95}}
-                className="cursor-pointer border-2 border-emerald-500 text-emerald-600 hover:bg-emerald-50 rounded-full text-lg px-10 py-4 font-semibold transition-all"
+                className="cursor-pointer border-2 border-emerald-500 text-emerald-600 hover:bg-emerald-50/50 glass rounded-full text-lg px-10 py-4 font-semibold transition-all shadow-premium hover:shadow-premium-lg"
               >
                 <a href="tel:+91XXXXXXXXXX">Call Us</a>
               </motion.button>
@@ -195,13 +195,18 @@ export default function DrivePage() {
                 whileInView={{opacity: 1, y: 0}}
                 viewport={{once: true}}
                 transition={{delay: idx * 0.1}}
-                whileHover={{y: -10}}
-                className="bg-linear-to-br from-emerald-50 to-teal-50 rounded-2xl p-8 border border-emerald-100"
+                whileHover={{y: -12, scale: 1.02}}
+                className="glass rounded-2xl p-8 border border-emerald-200/30 shadow-premium hover:shadow-premium-lg card-3d cursor-pointer"
               >
-                <div className="w-14 h-14 bg-linear-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mb-6">
-                  <benefit.icon className="h-7 w-7 text-white" />
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-gray-900">
+                <motion.div
+                  whileHover={{rotate: 360, scale: 1.1}}
+                  transition={{duration: 0.6, type: "spring"}}
+                  className="w-14 h-14 bg-linear-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mb-6 shadow-lg relative overflow-hidden"
+                >
+                  <div className="absolute inset-0 shimmer"></div>
+                  <benefit.icon className="h-7 w-7 text-white relative z-10" />
+                </motion.div>
+                <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-emerald-600 transition-colors">
                   {benefit.title}
                 </h3>
                 <p className="text-gray-600">{benefit.description}</p>
@@ -236,10 +241,10 @@ export default function DrivePage() {
                 whileInView={{opacity: 1, y: 0}}
                 viewport={{once: true}}
                 transition={{delay: idx * 0.1}}
-                whileHover={{scale: 1.05}}
-                className="bg-white rounded-2xl p-8 shadow-xl text-center"
+                whileHover={{scale: 1.05, y: -8}}
+                className="glass rounded-2xl p-8 shadow-premium-lg text-center border border-emerald-200/30 card-3d cursor-pointer"
               >
-                <div className="text-emerald-600 font-bold text-lg mb-2">
+                <div className="text-emerald-600 font-bold text-lg mb-2 gradient-text">
                   {earning.type}
                 </div>
                 <div className="text-4xl font-bold text-gray-900 mb-2">
@@ -278,7 +283,8 @@ export default function DrivePage() {
               initial={{opacity: 0, x: -30}}
               whileInView={{opacity: 1, x: 0}}
               viewport={{once: true}}
-              className="bg-linear-to-br from-emerald-50 to-teal-50 rounded-2xl p-8 border border-emerald-100"
+              whileHover={{scale: 1.02, y: -5}}
+              className="glass-dark rounded-2xl p-8 border border-emerald-200/30 shadow-premium card-3d"
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-linear-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center">
@@ -303,7 +309,8 @@ export default function DrivePage() {
               initial={{opacity: 0, x: 30}}
               whileInView={{opacity: 1, x: 0}}
               viewport={{once: true}}
-              className="bg-linear-to-br from-emerald-50 to-teal-50 rounded-2xl p-8 border border-emerald-100"
+              whileHover={{scale: 1.02, y: -5}}
+              className="glass-dark rounded-2xl p-8 border border-emerald-200/30 shadow-premium card-3d"
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-linear-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center">
@@ -401,17 +408,17 @@ export default function DrivePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button
-                whileHover={{scale: 1.05}}
+                whileHover={{scale: 1.05, y: -2}}
                 whileTap={{scale: 0.95}}
-                className="cursor-pointer bg-white text-emerald-600 rounded-full text-lg px-10 py-4 font-bold shadow-xl hover:shadow-2xl transition-all"
+                className="cursor-pointer bg-white text-emerald-600 rounded-full text-lg px-10 py-4 font-bold shadow-xl hover:shadow-2xl transition-all btn-glow"
               >
                 Apply as Driver
               </motion.button>
               <Link href="/contact">
                 <motion.button
-                  whileHover={{scale: 1.05}}
+                  whileHover={{scale: 1.05, y: -2}}
                   whileTap={{scale: 0.95}}
-                  className="cursor-pointer border-2 border-white text-white hover:bg-white/10 rounded-full text-lg px-10 py-4 font-bold transition-all"
+                  className="cursor-pointer border-2 border-white text-white hover:bg-white/10 rounded-full text-lg px-10 py-4 font-bold transition-all glass-dark"
                 >
                   Contact Support
                 </motion.button>

@@ -3,9 +3,14 @@ import {Inter} from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import {PageTransition} from "@/components/PageTransition";
+import {ScrollProgress} from "@/components/ScrollProgress";
+import {SmoothScroll} from "@/components/SmoothScroll";
 
 const inter = Inter({
-  subsets: ["latin"]
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter"
 });
 
 export const metadata: Metadata = {
@@ -20,10 +25,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} flex flex-col min-h-screen`}>
+    <html lang="en" className={inter.variable} data-scroll-behavior="smooth">
+      <body className={`${inter.className} antialiased bg-white`}>
+        <SmoothScroll />
+        <ScrollProgress />
         <Navbar />
-        <main className="grow">{children}</main>
+        <PageTransition>
+          <main className="relative -mt-20">{children}</main>
+        </PageTransition>
         <Footer />
       </body>
     </html>

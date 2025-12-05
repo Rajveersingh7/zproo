@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import {motion} from "framer-motion";
 import {
   Car,
@@ -101,7 +102,7 @@ export default function ServicesPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-emerald-50 via-white to-teal-50 overflow-hidden">
+      <section className="relative pt-32 pb-20 lg:pt-36 lg:pb-28 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-emerald-50 via-white to-teal-50 overflow-hidden">
         <motion.div
           className="absolute top-20 left-10 w-96 h-96 bg-emerald-400/20 rounded-full blur-3xl"
           animate={{
@@ -143,7 +144,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Detail Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-15 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto space-y-32">
           {services.map((service, idx) => (
             <motion.div
@@ -197,20 +198,59 @@ export default function ServicesPage() {
 
               {/* Visual */}
               <div className={idx % 2 === 1 ? "lg:order-1" : ""}>
-                <motion.div
-                  whileHover={{scale: 1.05}}
-                  className={`rounded-3xl bg-linear-to-br ${service.gradient} p-12 shadow-2xl`}
-                >
-                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-white">
-                    <service.icon className="h-24 w-24 mb-6 mx-auto" />
-                    <h3 className="text-3xl font-bold text-center mb-4">
-                      {service.title}
-                    </h3>
-                    <p className="text-center text-emerald-50 text-lg">
-                      {service.tagline}
-                    </p>
-                  </div>
-                </motion.div>
+                {idx === 0 ? (
+                  // Show vehicle image for Ride service
+                  <motion.div
+                    initial={{opacity: 0, x: idx % 2 === 1 ? -50 : 50}}
+                    whileInView={{opacity: 1, x: 0}}
+                    viewport={{once: true}}
+                    transition={{duration: 0.8}}
+                    whileHover={{scale: 1.05, y: -10}}
+                    className="relative rounded-3xl overflow-hidden shadow-2xl"
+                  >
+                    <div className="absolute inset-0 bg-linear-to-br from-emerald-500/20 to-teal-500/20 blur-2xl -z-10"></div>
+                    <div className="relative glass rounded-3xl p-8 border border-emerald-200/30">
+                      <motion.div
+                        animate={{
+                          y: [0, -8, 0]
+                        }}
+                        transition={{
+                          duration: 3,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }}
+                        className="relative"
+                      >
+                        <Image
+                          src="/vehicle.png"
+                          alt="Zproo Electric Vehicle - Tata Xpres-T EV"
+                          width={600}
+                          height={300}
+                          className="w-full h-auto drop-shadow-xl"
+                          style={{
+                            filter:
+                              "drop-shadow(0 20px 40px rgba(16, 185, 129, 0.25))"
+                          }}
+                        />
+                      </motion.div>
+                    </div>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    whileHover={{scale: 1.05}}
+                    className={`rounded-3xl bg-linear-to-br ${service.gradient} p-12 shadow-2xl`}
+                  >
+                    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-white">
+                      <service.icon className="h-24 w-24 mb-6 mx-auto" />
+                      <h3 className="text-3xl font-bold text-center mb-4">
+                        {service.title}
+                      </h3>
+                      <p className="text-center text-emerald-50 text-lg">
+                        {service.tagline}
+                      </p>
+                    </div>
+                  </motion.div>
+                )}
               </div>
             </motion.div>
           ))}

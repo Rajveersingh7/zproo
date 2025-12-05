@@ -127,7 +127,7 @@ export default function PrivacyPage() {
   return (
     <main className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-linear-to-br from-emerald-600 to-teal-600 py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-linear-to-br from-emerald-600 to-teal-600 pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{opacity: 0, y: 20}}
