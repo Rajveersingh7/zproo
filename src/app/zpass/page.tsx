@@ -328,7 +328,7 @@ Your pass will be activated shortly!`);
         }}
       />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-12 sm:pt-36 sm:pb-16 lg:pt-40 lg:pb-20">
         {/* Header */}
         <motion.div
           initial={{opacity: 0, y: -20}}
@@ -356,7 +356,8 @@ Your pass will be activated shortly!`);
           initial={{opacity: 0, y: 20}}
           animate={{opacity: 1, y: 0}}
           transition={{duration: 0.8, delay: 0.2}}
-          className="bg-white rounded-3xl shadow-2xl shadow-emerald-500/10 p-6 sm:p-8 lg:p-10 border border-gray-100"
+          whileHover={{y: -5}}
+          className="glass rounded-3xl shadow-premium-lg p-6 sm:p-8 lg:p-10 border border-emerald-200/30 card-3d"
         >
           <div className="space-y-6">
             {/* Location Fields */}
@@ -369,13 +370,14 @@ Your pass will be activated shortly!`);
                     Pickup Location
                   </div>
                 </label>
-                <input
+                <motion.input
+                  whileFocus={{scale: 1.02}}
                   type="text"
                   name="pickupLocation"
                   value={formData.pickupLocation}
                   onChange={handleInputChange}
                   placeholder="Enter pickup location"
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition text-gray-900 placeholder:text-gray-400"
+                  className="input-premium w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all text-gray-900 placeholder:text-gray-400 bg-white/50 backdrop-blur-sm"
                 />
               </div>
 
@@ -387,13 +389,14 @@ Your pass will be activated shortly!`);
                     Drop Location
                   </div>
                 </label>
-                <input
+                <motion.input
+                  whileFocus={{scale: 1.02}}
                   type="text"
                   name="dropLocation"
                   value={formData.dropLocation}
                   onChange={handleInputChange}
                   placeholder="Enter drop location"
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition text-gray-900 placeholder:text-gray-400"
+                  className="input-premium w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all text-gray-900 placeholder:text-gray-400 bg-white/50 backdrop-blur-sm"
                 />
               </div>
             </div>
@@ -406,7 +409,8 @@ Your pass will be activated shortly!`);
                   Distance (in kilometers)
                 </div>
               </label>
-              <input
+              <motion.input
+                whileFocus={{scale: 1.02}}
                 type="number"
                 name="distance"
                 value={formData.distance}
@@ -414,7 +418,7 @@ Your pass will be activated shortly!`);
                 placeholder="Enter distance in km"
                 min="0"
                 step="0.1"
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition text-gray-900 placeholder:text-gray-400"
+                className="input-premium w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all text-gray-900 placeholder:text-gray-400 bg-white/50 backdrop-blur-sm"
               />
             </div>
 
@@ -451,8 +455,8 @@ Your pass will be activated shortly!`);
                     onClick={() => handlePassTypeChange(option.type)}
                     className={`cursor-pointer p-4 rounded-xl border-2 transition-all ${
                       formData.passType === option.type
-                        ? "border-emerald-500 bg-emerald-50 text-emerald-700"
-                        : "border-gray-200 hover:border-emerald-300 text-gray-700"
+                        ? "border-emerald-500 bg-emerald-50/50 glass-dark text-emerald-700 shadow-premium"
+                        : "border-gray-200 hover:border-emerald-300 text-gray-700 glass"
                     }`}
                   >
                     <div className="font-semibold text-sm">{option.label}</div>
@@ -491,8 +495,8 @@ Your pass will be activated shortly!`);
                       onClick={() => handleWeeklyDayChange(option.day)}
                       className={`cursor-pointer p-3 rounded-lg border-2 transition-all ${
                         formData.weeklyDay === option.day
-                          ? "border-teal-500 bg-teal-50 text-teal-700 font-semibold"
-                          : "border-gray-200 hover:border-teal-300 text-gray-700"
+                          ? "border-teal-500 bg-teal-50/50 glass-dark text-teal-700 font-semibold shadow-premium"
+                          : "border-gray-200 hover:border-teal-300 text-gray-700 glass"
                       }`}
                     >
                       {option.label}
@@ -836,12 +840,17 @@ Your pass will be activated shortly!`);
 
             {/* Purchase Button */}
             <motion.button
-              whileHover={{scale: 1.02}}
+              whileHover={{scale: 1.02, y: -2}}
               whileTap={{scale: 0.98}}
               onClick={handlePurchase}
-              className="cursor-pointer w-full bg-linear-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white rounded-xl py-4 px-8 font-bold text-lg shadow-lg shadow-emerald-500/30 transition-all flex items-center justify-center gap-3"
+              className="cursor-pointer w-full bg-linear-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white rounded-xl py-4 px-8 font-bold text-lg shadow-lg shadow-emerald-500/30 hover:shadow-xl hover:shadow-emerald-500/40 transition-all flex items-center justify-center gap-3 btn-glow"
             >
-              <CheckCircle2 className="h-6 w-6" />
+              <motion.div
+                animate={{rotate: [0, 10, -10, 0]}}
+                transition={{duration: 2, repeat: Infinity, repeatDelay: 1}}
+              >
+                <CheckCircle2 className="h-6 w-6" />
+              </motion.div>
               Purchase ZPass
             </motion.button>
 
@@ -859,35 +868,50 @@ Your pass will be activated shortly!`);
           transition={{duration: 0.8, delay: 0.4}}
           className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6"
         >
-          <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center">
-            <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <IndianRupee className="h-6 w-6 text-emerald-600" />
-            </div>
-            <h3 className="font-bold text-gray-800 mb-2">Save Money</h3>
-            <p className="text-sm text-gray-600">
-              Get the best rates for regular commutes
-            </p>
-          </div>
-
-          <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center">
-            <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <CheckCircle2 className="h-6 w-6 text-teal-600" />
-            </div>
-            <h3 className="font-bold text-gray-800 mb-2">Guaranteed Rides</h3>
-            <p className="text-sm text-gray-600">
-              Your ride is always confirmed at scheduled time
-            </p>
-          </div>
-
-          <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center">
-            <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Ticket className="h-6 w-6 text-emerald-600" />
-            </div>
-            <h3 className="font-bold text-gray-800 mb-2">Flexible Duration</h3>
-            <p className="text-sm text-gray-600">
-              Choose any date range that suits you
-            </p>
-          </div>
+          {[
+            {
+              icon: IndianRupee,
+              title: "Save Money",
+              desc: "Get the best rates for regular commutes",
+              bgClass: "bg-emerald-100",
+              iconClass: "text-emerald-600"
+            },
+            {
+              icon: CheckCircle2,
+              title: "Guaranteed Rides",
+              desc: "Your ride is always confirmed at scheduled time",
+              bgClass: "bg-teal-100",
+              iconClass: "text-teal-600"
+            },
+            {
+              icon: Ticket,
+              title: "Flexible Duration",
+              desc: "Choose any date range that suits you",
+              bgClass: "bg-emerald-100",
+              iconClass: "text-emerald-600"
+            }
+          ].map((benefit, idx) => (
+            <motion.div
+              key={benefit.title}
+              initial={{opacity: 0, y: 20}}
+              animate={{opacity: 1, y: 0}}
+              transition={{delay: 0.5 + idx * 0.1}}
+              whileHover={{y: -8, scale: 1.02}}
+              className="glass rounded-xl p-6 shadow-premium hover:shadow-premium-lg border border-emerald-200/30 text-center card-3d cursor-pointer"
+            >
+              <motion.div
+                whileHover={{rotate: 360, scale: 1.1}}
+                transition={{duration: 0.5}}
+                className={`w-12 h-12 ${benefit.bgClass} rounded-full flex items-center justify-center mx-auto mb-4 shadow-md`}
+              >
+                <benefit.icon className={`h-6 w-6 ${benefit.iconClass}`} />
+              </motion.div>
+              <h3 className="font-bold text-gray-800 mb-2 group-hover:text-emerald-600 transition-colors">
+                {benefit.title}
+              </h3>
+              <p className="text-sm text-gray-600">{benefit.desc}</p>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </main>

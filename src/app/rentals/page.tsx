@@ -125,7 +125,7 @@ export default function RentalsPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-emerald-50 via-white to-teal-50 overflow-hidden">
+      <section className="relative pt-32 pb-20 lg:pt-36 lg:pb-28 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-emerald-50 via-white to-teal-50 overflow-hidden">
         <motion.div
           className="absolute top-20 right-10 w-96 h-96 bg-emerald-400/20 rounded-full blur-3xl"
           animate={{
@@ -166,16 +166,16 @@ export default function RentalsPage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button
-                whileHover={{scale: 1.05}}
+                whileHover={{scale: 1.05, y: -2}}
                 whileTap={{scale: 0.95}}
-                className="bg-linear-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white rounded-full text-lg px-10 py-4 font-semibold transition-all shadow-lg shadow-emerald-500/30 cursor-pointer"
+                className="bg-linear-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white rounded-full text-lg px-10 py-4 font-semibold transition-all shadow-lg shadow-emerald-500/30 hover:shadow-xl hover:shadow-emerald-500/40 btn-glow cursor-pointer"
               >
                 Browse Vehicles
               </motion.button>
               <motion.button
-                whileHover={{scale: 1.05}}
+                whileHover={{scale: 1.05, y: -2}}
                 whileTap={{scale: 0.95}}
-                className="border-2 border-emerald-500 text-emerald-600 hover:bg-emerald-50 rounded-full text-lg px-10 py-4 font-semibold transition-all cursor-pointer"
+                className="border-2 border-emerald-500 text-emerald-600 hover:bg-emerald-50/50 glass rounded-full text-lg px-10 py-4 font-semibold transition-all shadow-premium hover:shadow-premium-lg cursor-pointer"
               >
                 <a href="tel:+91XXXXXXXXXX">Call Us Now</a>
               </motion.button>
@@ -209,13 +209,18 @@ export default function RentalsPage() {
                 whileInView={{opacity: 1, y: 0}}
                 viewport={{once: true}}
                 transition={{delay: idx * 0.1}}
-                whileHover={{y: -10}}
-                className="text-center p-6 rounded-2xl bg-linear-to-br from-emerald-50 to-teal-50 border border-emerald-100"
+                whileHover={{y: -12, scale: 1.02}}
+                className="text-center p-6 rounded-2xl glass-dark border border-emerald-200/30 shadow-premium hover:shadow-premium-lg card-3d cursor-pointer"
               >
-                <div className="w-16 h-16 bg-linear-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <benefit.icon className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold mb-2 text-gray-900">
+                <motion.div
+                  whileHover={{rotate: 360, scale: 1.1}}
+                  transition={{duration: 0.6, type: "spring"}}
+                  className="w-16 h-16 bg-linear-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg relative overflow-hidden"
+                >
+                  <div className="absolute inset-0 shimmer"></div>
+                  <benefit.icon className="h-8 w-8 text-white relative z-10" />
+                </motion.div>
+                <h3 className="text-xl font-bold mb-2 text-gray-900 group-hover:text-emerald-600 transition-colors">
                   {benefit.title}
                 </h3>
                 <p className="text-gray-600">{benefit.description}</p>
@@ -250,8 +255,12 @@ export default function RentalsPage() {
                 whileInView={{opacity: 1, y: 0}}
                 viewport={{once: true}}
                 transition={{delay: idx * 0.1}}
-                whileHover={{y: -10}}
-                className="relative bg-white rounded-3xl p-8 shadow-xl border border-gray-200"
+                whileHover={{y: -12, scale: 1.02}}
+                className={`relative glass rounded-3xl p-8 shadow-premium-lg border ${
+                  plan.popular
+                    ? "border-emerald-300/50"
+                    : "border-emerald-200/30"
+                } card-3d cursor-pointer`}
               >
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
@@ -278,12 +287,12 @@ export default function RentalsPage() {
                 </ul>
 
                 <motion.button
-                  whileHover={{scale: 1.05}}
+                  whileHover={{scale: 1.05, y: -2}}
                   whileTap={{scale: 0.95}}
                   className={`w-full py-4 rounded-xl font-bold text-lg transition-all ${
                     plan.popular
-                      ? "bg-linear-to-r from-emerald-500 to-teal-500 text-white shadow-lg shadow-emerald-500/30"
-                      : "border-2 border-emerald-500 text-emerald-600 hover:bg-emerald-50"
+                      ? "bg-linear-to-r from-emerald-500 to-teal-500 text-white shadow-lg shadow-emerald-500/30 hover:shadow-xl hover:shadow-emerald-500/40 btn-glow"
+                      : "border-2 border-emerald-500 text-emerald-600 hover:bg-emerald-50/50 glass"
                   }`}
                 >
                   Book Now
@@ -355,17 +364,17 @@ export default function RentalsPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button
-                whileHover={{scale: 1.05}}
+                whileHover={{scale: 1.05, y: -2}}
                 whileTap={{scale: 0.95}}
-                className="bg-white text-emerald-600 rounded-full text-lg px-10 py-4 font-bold shadow-xl hover:shadow-2xl transition-all"
+                className="bg-white text-emerald-600 rounded-full text-lg px-10 py-4 font-bold shadow-xl hover:shadow-2xl transition-all btn-glow"
               >
                 Start Booking
               </motion.button>
               <Link href="/contact">
                 <motion.button
-                  whileHover={{scale: 1.05}}
+                  whileHover={{scale: 1.05, y: -2}}
                   whileTap={{scale: 0.95}}
-                  className="bg-white text-emerald-600 hover:bg-gray-100 rounded-full text-lg px-12 py-4 font-semibold transition-all shadow-lg cursor-pointer"
+                  className="bg-white text-emerald-600 hover:bg-gray-100 rounded-full text-lg px-12 py-4 font-semibold transition-all shadow-lg hover:shadow-xl cursor-pointer glass"
                 >
                   Contact Us
                 </motion.button>
