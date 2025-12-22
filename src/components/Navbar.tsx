@@ -59,12 +59,12 @@ export default function Navbar() {
                 className="relative"
               >
                 <Image
-                  src="/logo.png"
+                  src="/icon.png"
                   alt="Zproo"
-                  width={150}
+                  width={50}
                   height={50}
                   priority
-                  className="h-36 w-auto transition-opacity group-hover:opacity-90"
+                  className="h-12 w-auto transition-opacity group-hover:opacity-90"
                 />
               </motion.div>
             </Link>
@@ -79,11 +79,11 @@ export default function Navbar() {
                     transition={{delay: idx * 0.1}}
                     className="relative group"
                   >
-                    <span className="relative z-10 py-2 px-4 text-gray-700 font-medium transition-colors group-hover:text-emerald-600 rounded-full block">
+                    <span className="relative z-10 py-2 px-4 text-gray-700 font-medium transition-colors group-hover:text-sky-600 rounded-full block">
                       {link.label}
                     </span>
                     <motion.span
-                      className="absolute inset-0 bg-linear-to-r from-emerald-50 to-teal-50 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                      className="absolute inset-0 bg-linear-to-r from-sky-50 to-blue-50 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
                       layoutId="nav-indicator"
                     />
                   </motion.div>
@@ -98,7 +98,7 @@ export default function Navbar() {
               <motion.span
                 whileHover={{scale: 1.05}}
                 whileTap={{scale: 0.95}}
-                className="px-4 py-2 text-gray-700 hover:text-emerald-600 font-medium transition-colors rounded-full hover:bg-emerald-50/50 cursor-pointer"
+                className="px-4 py-2 text-gray-700 hover:text-sky-600 font-medium transition-colors rounded-full hover:bg-sky-50/50 cursor-pointer"
               >
                 About
               </motion.span>
@@ -107,7 +107,7 @@ export default function Navbar() {
               <motion.span
                 whileHover={{scale: 1.05}}
                 whileTap={{scale: 0.95}}
-                className="px-4 py-2 text-gray-700 hover:text-emerald-600 font-medium transition-colors rounded-full hover:bg-emerald-50/50 cursor-pointer"
+                className="px-4 py-2 text-gray-700 hover:text-sky-600 font-medium transition-colors rounded-full hover:bg-sky-50/50 cursor-pointer"
               >
                 Contact
               </motion.span>
@@ -116,7 +116,7 @@ export default function Navbar() {
               <motion.button
                 whileHover={{scale: 1.05, y: -2}}
                 whileTap={{scale: 0.95}}
-                className="ml-2 px-6 py-2.5 text-gray-700 hover:text-emerald-600 hover:border-emerald-500 font-semibold transition-all rounded-full border-2 border-gray-300 hover:shadow-md cursor-pointer"
+                className="ml-2 px-6 py-2.5 text-gray-700 hover:text-sky-600 hover:border-sky-500 font-semibold transition-all rounded-full border-2 border-gray-300 hover:shadow-md cursor-pointer"
               >
                 Log in
               </motion.button>
@@ -125,7 +125,7 @@ export default function Navbar() {
               <motion.button
                 whileHover={{scale: 1.05, y: -2}}
                 whileTap={{scale: 0.95}}
-                className="px-6 py-2.5 bg-linear-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white rounded-full font-semibold transition-all shadow-lg shadow-emerald-500/30 hover:shadow-xl hover:shadow-emerald-500/40 btn-glow cursor-pointer"
+                className="px-6 py-2.5 bg-linear-to-r from-sky-500 to-sky-600 hover:from-sky-600 hover:to-sky-700 text-white rounded-full font-semibold transition-all shadow-lg shadow-sky-500/30 hover:shadow-xl hover:shadow-sky-500/40 btn-glow cursor-pointer"
               >
                 Sign up
               </motion.button>
@@ -137,7 +137,7 @@ export default function Navbar() {
             whileHover={{scale: 1.1}}
             whileTap={{scale: 0.9}}
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-xl text-gray-700 hover:bg-emerald-50 transition-colors cursor-pointer"
+            className="lg:hidden p-2 rounded-xl text-gray-700 hover:bg-sky-50 transition-colors cursor-pointer"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </motion.button>
@@ -152,7 +152,7 @@ export default function Navbar() {
             animate={{opacity: 1, height: "auto"}}
             exit={{opacity: 0, height: 0}}
             transition={{duration: 0.3}}
-            className="lg:hidden glass-dark border-t border-emerald-200/50 overflow-hidden"
+            className="lg:hidden glass-dark border-t border-sky-200/50 overflow-hidden"
           >
             <div className="px-4 py-4 space-y-2">
               {navLinks.map((link, idx) => (
@@ -165,39 +165,39 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="block px-4 py-3 text-gray-700 hover:bg-emerald-50/50 hover:text-emerald-600 rounded-xl transition-all font-medium"
+                    className="block px-4 py-3 text-gray-700 hover:bg-sky-50/50 hover:text-sky-600 rounded-xl transition-all font-medium"
                   >
                     {link.label}
                   </Link>
                 </motion.div>
               ))}
-              <div className="border-t border-emerald-200/50 my-2"></div>
+              <div className="border-t border-sky-200/50 my-2"></div>
               <Link
                 href="/about"
                 onClick={() => setIsOpen(false)}
-                className="block px-4 py-3 text-gray-700 hover:bg-emerald-50/50 hover:text-emerald-600 rounded-xl transition-all font-medium"
+                className="block px-4 py-3 text-gray-700 hover:bg-sky-50/50 hover:text-sky-600 rounded-xl transition-all font-medium"
               >
                 About
               </Link>
               <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}
-                className="block px-4 py-3 text-gray-700 hover:bg-emerald-50/50 hover:text-emerald-600 rounded-xl transition-all font-medium"
+                className="block px-4 py-3 text-gray-700 hover:bg-sky-50/50 hover:text-sky-600 rounded-xl transition-all font-medium"
               >
                 Contact
               </Link>
-              <div className="border-t border-emerald-200/50 my-2"></div>
+              <div className="border-t border-sky-200/50 my-2"></div>
               <Link
                 href="/login"
                 onClick={() => setIsOpen(false)}
-                className="block px-4 py-3 text-gray-700 hover:bg-emerald-50/50 hover:text-emerald-600 rounded-xl transition-all font-medium text-center"
+                className="block px-4 py-3 text-gray-700 hover:bg-sky-50/50 hover:text-sky-600 rounded-xl transition-all font-medium text-center"
               >
                 Log in
               </Link>
               <Link
                 href="/signup"
                 onClick={() => setIsOpen(false)}
-                className="block px-4 py-3 bg-linear-to-r from-emerald-500 to-teal-500 text-white rounded-xl hover:from-emerald-600 hover:to-teal-600 transition-all text-center font-semibold shadow-lg"
+                className="block px-4 py-3 bg-linear-to-r from-sky-500 to-sky-600 text-white rounded-xl hover:from-sky-600 hover:to-sky-700 transition-all text-center font-semibold shadow-lg"
               >
                 Sign up
               </Link>

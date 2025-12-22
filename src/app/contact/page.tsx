@@ -51,37 +51,37 @@ export default function ContactPage() {
       title: "General Support",
       email: "support@zproo.com",
       description: "For ride bookings, account issues, and general queries",
-      color: "from-emerald-500 to-emerald-600"
+      color: "from-sky-500 to-sky-600"
     },
     {
       icon: Briefcase,
       title: "Careers & HR",
       email: "careers@zproo.com",
       description: "Job applications & HR inquiries",
-      color: "from-emerald-600 to-teal-500"
+      color: "from-sky-600 to-blue-500"
     },
     {
       icon: Car,
       title: "Driver Support",
       email: "drivers@zproo.com",
       description: "Driver partners & fleet queries",
-      color: "from-teal-500 to-teal-600"
+      color: "from-yellow-400 to-yellow-500"
     },
     {
       icon: Users,
       title: "Business Inquiries",
       email: "business@zproo.com",
       description: "Partnerships & corporate collaborations",
-      color: "from-teal-600 to-emerald-500"
+      color: "from-yellow-400 to-yellow-500"
     }
   ];
 
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-36 lg:pb-28 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-emerald-50 via-white to-teal-50 overflow-hidden">
+      <section className="relative pt-32 pb-20 lg:pt-36 lg:pb-28 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-50 via-white to-blue-50 overflow-hidden">
         <motion.div
-          className="absolute top-20 right-10 w-96 h-96 bg-emerald-400/20 rounded-full blur-3xl"
+          className="absolute top-20 right-10 w-96 h-96 bg-sky-400/20 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             x: [0, 50, 0]
@@ -101,12 +101,12 @@ export default function ContactPage() {
             className="text-center max-w-4xl mx-auto"
           >
             <div className="inline-block mb-6">
-              <span className="px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold">
+              <span className="px-4 py-2 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold">
                 📧 Get in Touch
               </span>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 bg-linear-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent leading-tight">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent leading-tight">
               We&apos;re Here to Help
             </h1>
 
@@ -153,7 +153,7 @@ export default function ContactPage() {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Enter your full name"
-                      className="w-full pl-12 pr-4 py-3.5 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition text-gray-900 placeholder:text-gray-400"
+                      className="w-full pl-12 pr-4 py-3.5 border-2 border-gray-200 rounded-xl focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10 outline-none transition text-gray-900 placeholder:text-gray-400"
                     />
                   </div>
                 </div>
@@ -172,7 +172,7 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="your.email@example.com"
-                      className="w-full pl-12 pr-4 py-3.5 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition text-gray-900 placeholder:text-gray-400"
+                      className="w-full pl-12 pr-4 py-3.5 border-2 border-gray-200 rounded-xl focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10 outline-none transition text-gray-900 placeholder:text-gray-400"
                     />
                   </div>
                 </div>
@@ -186,7 +186,7 @@ export default function ContactPage() {
                     name="inquiryType"
                     value={formData.inquiryType}
                     onChange={handleChange}
-                    className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition text-gray-900"
+                    className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10 outline-none transition text-gray-900"
                   >
                     <option value="">Choose a category</option>
                     <option value="general">General Inquiry</option>
@@ -210,7 +210,7 @@ export default function ContactPage() {
                     value={formData.subject}
                     onChange={handleChange}
                     placeholder="Brief subject of your message"
-                    className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition text-gray-900 placeholder:text-gray-400"
+                    className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10 outline-none transition text-gray-900 placeholder:text-gray-400"
                   />
                 </div>
 
@@ -226,7 +226,7 @@ export default function ContactPage() {
                     onChange={handleChange}
                     rows={6}
                     placeholder="Tell us more about your inquiry..."
-                    className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition text-gray-900 placeholder:text-gray-400 resize-none"
+                    className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10 outline-none transition text-gray-900 placeholder:text-gray-400 resize-none"
                   />
                 </div>
 
@@ -235,7 +235,7 @@ export default function ContactPage() {
                   type="submit"
                   whileHover={{scale: 1.02}}
                   whileTap={{scale: 0.98}}
-                  className="cursor-pointer w-full bg-linear-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white rounded-xl py-4 px-6 font-bold text-lg shadow-lg shadow-emerald-500/30 transition-all flex items-center justify-center gap-2"
+                  className="cursor-pointer w-full bg-linear-to-r from-sky-500 to-blue-500 hover:from-sky-600 hover:to-sky-700 text-white rounded-xl py-4 px-6 font-bold text-lg shadow-lg shadow-sky-500/30 transition-all flex items-center justify-center gap-2"
                 >
                   {submitted ? (
                     <>
@@ -269,9 +269,9 @@ export default function ContactPage() {
               </div>
 
               {/* Address */}
-              <div className="bg-linear-to-br from-emerald-50 to-teal-50 rounded-2xl p-8 border border-emerald-100">
+              <div className="bg-linear-to-br from-sky-50 to-blue-50 rounded-2xl p-8 border border-sky-100">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-linear-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 bg-linear-to-br from-sky-500 to-sky-700 rounded-xl flex items-center justify-center shrink-0">
                     <MapPin className="h-6 w-6 text-white" />
                   </div>
                   <div>
@@ -288,9 +288,9 @@ export default function ContactPage() {
               </div>
 
               {/* Business Hours */}
-              <div className="bg-linear-to-br from-emerald-50 to-teal-50 rounded-2xl p-8 border border-emerald-100">
+              <div className="bg-linear-to-br from-sky-50 to-blue-50 rounded-2xl p-8 border border-sky-100">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-linear-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 bg-linear-to-br from-sky-500 to-sky-700 rounded-xl flex items-center justify-center shrink-0">
                     <Clock className="h-6 w-6 text-white" />
                   </div>
                   <div>
@@ -308,9 +308,9 @@ export default function ContactPage() {
               </div>
 
               {/* Phone Support */}
-              <div className="bg-linear-to-br from-emerald-50 to-teal-50 rounded-2xl p-8 border border-emerald-100">
+              <div className="bg-linear-to-br from-sky-50 to-blue-50 rounded-2xl p-8 border border-sky-100">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-linear-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 bg-linear-to-br from-sky-500 to-sky-700 rounded-xl flex items-center justify-center shrink-0">
                     <Phone className="h-6 w-6 text-white" />
                   </div>
                   <div>
@@ -330,7 +330,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Channels */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-emerald-50 to-teal-50">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-50 to-blue-50">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{opacity: 0, y: 20}}
@@ -338,7 +338,7 @@ export default function ContactPage() {
             viewport={{once: true}}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-linear-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent">
               Contact Information
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -367,7 +367,7 @@ export default function ContactPage() {
                 </h3>
                 <a
                   href={`mailto:${channel.email}`}
-                  className="text-emerald-600 hover:text-emerald-700 font-semibold text-lg mb-3 block"
+                  className="text-sky-600 hover:text-sky-700 font-semibold text-lg mb-3 block"
                 >
                   {channel.email}
                 </a>
@@ -380,3 +380,5 @@ export default function ContactPage() {
     </main>
   );
 }
+
+

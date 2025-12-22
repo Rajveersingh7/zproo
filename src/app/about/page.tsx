@@ -46,23 +46,23 @@ export default function AboutPage() {
       name: "Dhanraj Garg",
       role: "Founder",
       description: "Visionary leader driving sustainable transportation",
-      color: "from-emerald-500 to-emerald-600"
+      color: "from-sky-500 to-sky-600"
     },
     {
       initials: "RD",
       name: "Ronak Dave",
       role: "Co-Founder",
       description: "Technology expert building scalable solutions",
-      color: "from-teal-500 to-teal-600"
+      color: "from-yellow-400 to-yellow-500"
     }
   ];
 
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-36 lg:pb-28 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-emerald-50 via-white to-teal-50 overflow-hidden">
+      <section className="relative pt-32 pb-20 lg:pt-36 lg:pb-28 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-50 via-white to-blue-50 overflow-hidden">
         <motion.div
-          className="absolute top-20 left-10 w-96 h-96 bg-emerald-400/20 rounded-full blur-3xl"
+          className="absolute top-20 left-10 w-96 h-96 bg-sky-400/20 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             y: [0, 50, 0]
@@ -82,12 +82,12 @@ export default function AboutPage() {
             className="text-center max-w-4xl mx-auto"
           >
             <div className="inline-block mb-6">
-              <span className="px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold">
+              <span className="px-4 py-2 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold">
                 🌱 About ZPROO
               </span>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 bg-linear-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent leading-tight">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent leading-tight">
               Revolutionizing Urban
               <br />
               Transportation
@@ -111,7 +111,7 @@ export default function AboutPage() {
             viewport={{once: true}}
             className="text-center"
           >
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-linear-to-br from-emerald-500 to-teal-600 rounded-2xl mb-6">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-linear-to-br from-sky-500 to-sky-700 rounded-2xl mb-6">
               <Target className="h-8 w-8 text-white" />
             </div>
             <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
@@ -133,7 +133,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-emerald-50 to-teal-50">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-50 to-blue-50">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{opacity: 0, y: 20}}
@@ -141,7 +141,7 @@ export default function AboutPage() {
             viewport={{once: true}}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-linear-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent">
               Our Core Values
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -160,7 +160,7 @@ export default function AboutPage() {
                 whileHover={{y: -10}}
                 className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all"
               >
-                <div className="w-14 h-14 bg-linear-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mb-6">
+                <div className="w-14 h-14 bg-linear-to-br from-sky-500 to-sky-700 rounded-xl flex items-center justify-center mb-6">
                   <value.icon className="h-7 w-7 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-gray-900">
@@ -214,7 +214,7 @@ export default function AboutPage() {
                 <h3 className="text-2xl font-bold mb-2 text-gray-900">
                   {founder.name}
                 </h3>
-                <div className="inline-block px-4 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold mb-4">
+                <div className="inline-block px-4 py-1 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold mb-4">
                   {founder.role}
                 </div>
                 <p className="text-gray-600 text-lg">{founder.description}</p>
@@ -225,7 +225,7 @@ export default function AboutPage() {
       </section>
 
       {/* Office Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-emerald-50 to-teal-50">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-50 to-blue-50">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{opacity: 0, y: 20}}
@@ -233,7 +233,7 @@ export default function AboutPage() {
             viewport={{once: true}}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-linear-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent">
               Our Office
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -248,7 +248,7 @@ export default function AboutPage() {
             className="bg-white rounded-3xl p-12 shadow-2xl max-w-4xl mx-auto"
           >
             <div className="flex items-start gap-6">
-              <div className="w-16 h-16 bg-linear-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center shrink-0">
+              <div className="w-16 h-16 bg-linear-to-br from-sky-500 to-sky-700 rounded-2xl flex items-center justify-center shrink-0">
                 <MapPin className="h-8 w-8 text-white" />
               </div>
               <div>
@@ -264,18 +264,18 @@ export default function AboutPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <div className="flex items-center gap-3">
-                    <Mail className="h-5 w-5 text-emerald-600" />
+                    <Mail className="h-5 w-5 text-sky-600" />
                     <span className="text-gray-700">info@zproo.com</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Phone className="h-5 w-5 text-emerald-600" />
+                    <Phone className="h-5 w-5 text-sky-600" />
                     <span className="text-gray-700">+91-XXXXX-XXXXX</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 p-6 bg-emerald-50 rounded-xl border border-emerald-200">
+            <div className="mt-8 p-6 bg-sky-50 rounded-xl border border-sky-200">
               <p className="text-center text-gray-700">
                 <strong>Located in Pune&apos;s prime IT hub</strong> - Easily
                 accessible with ample parking and public transport connectivity
@@ -334,7 +334,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-emerald-600 to-teal-600">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-600 to-sky-700">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{opacity: 0, y: 20}}
@@ -344,7 +344,7 @@ export default function AboutPage() {
             <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
               Join the Electric Revolution
             </h2>
-            <p className="text-xl text-emerald-50 mb-10">
+            <p className="text-xl text-sky-100 mb-10">
               Be part of the sustainable future. Start your journey with ZPROO
               today.
             </p>
@@ -352,7 +352,7 @@ export default function AboutPage() {
               <motion.button
                 whileHover={{scale: 1.05}}
                 whileTap={{scale: 0.95}}
-                className="cursor-pointer bg-white text-emerald-600 rounded-full text-lg px-10 py-4 font-bold shadow-xl hover:shadow-2xl transition-all"
+                className="cursor-pointer bg-white text-sky-600 rounded-full text-lg px-10 py-4 font-bold shadow-xl hover:shadow-2xl transition-all"
               >
                 Book a Ride
               </motion.button>
@@ -370,3 +370,5 @@ export default function AboutPage() {
     </main>
   );
 }
+
+

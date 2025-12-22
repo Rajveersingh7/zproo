@@ -110,9 +110,9 @@ export default function DrivePage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-36 lg:pb-28 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-emerald-50 via-white to-teal-50 overflow-hidden">
+      <section className="relative pt-32 pb-20 lg:pt-36 lg:pb-28 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-50 via-white to-blue-50 overflow-hidden">
         <motion.div
-          className="absolute top-20 right-10 w-96 h-96 bg-teal-400/20 rounded-full blur-3xl"
+          className="absolute top-20 right-10 w-96 h-96 bg-yellow-300/30 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.3, 1],
             x: [0, -50, 0]
@@ -132,12 +132,12 @@ export default function DrivePage() {
             className="text-center max-w-4xl mx-auto"
           >
             <div className="inline-block mb-6">
-              <span className="px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold">
+              <span className="px-4 py-2 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold">
                 🚗 Drive with Zproo
               </span>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 bg-linear-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent leading-tight">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent leading-tight">
               Drive Electric,
               <br />
               Earn More
@@ -153,14 +153,14 @@ export default function DrivePage() {
               <motion.button
                 whileHover={{scale: 1.05, y: -2}}
                 whileTap={{scale: 0.95}}
-                className="cursor-pointer bg-linear-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white rounded-full text-lg px-10 py-4 font-semibold transition-all shadow-lg shadow-emerald-500/30 hover:shadow-xl hover:shadow-emerald-500/40 btn-glow"
+                className="cursor-pointer bg-linear-to-r from-sky-500 to-blue-500 hover:from-sky-600 hover:to-sky-700 text-white rounded-full text-lg px-10 py-4 font-semibold transition-all shadow-lg shadow-sky-500/30 hover:shadow-xl hover:shadow-sky-500/40 btn-glow"
               >
                 Apply Now
               </motion.button>
               <motion.button
                 whileHover={{scale: 1.05, y: -2}}
                 whileTap={{scale: 0.95}}
-                className="cursor-pointer border-2 border-emerald-500 text-emerald-600 hover:bg-emerald-50/50 glass rounded-full text-lg px-10 py-4 font-semibold transition-all shadow-premium hover:shadow-premium-lg"
+                className="cursor-pointer border-2 border-sky-500 text-sky-600 hover:bg-sky-50/50 glass rounded-full text-lg px-10 py-4 font-semibold transition-all shadow-premium hover:shadow-premium-lg"
               >
                 <a href="tel:+91XXXXXXXXXX">Call Us</a>
               </motion.button>
@@ -178,7 +178,7 @@ export default function DrivePage() {
             viewport={{once: true}}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-linear-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent">
               Why Drive with Zproo?
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -196,17 +196,17 @@ export default function DrivePage() {
                 viewport={{once: true}}
                 transition={{delay: idx * 0.1}}
                 whileHover={{y: -12, scale: 1.02}}
-                className="glass rounded-2xl p-8 border border-emerald-200/30 shadow-premium hover:shadow-premium-lg card-3d cursor-pointer"
+                className="glass rounded-2xl p-8 border border-sky-200/30 shadow-premium hover:shadow-premium-lg card-3d cursor-pointer"
               >
                 <motion.div
                   whileHover={{rotate: 360, scale: 1.1}}
                   transition={{duration: 0.6, type: "spring"}}
-                  className="w-14 h-14 bg-linear-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mb-6 shadow-lg relative overflow-hidden"
+                  className="w-14 h-14 bg-linear-to-br from-sky-500 to-sky-700 rounded-xl flex items-center justify-center mb-6 shadow-lg relative overflow-hidden"
                 >
                   <div className="absolute inset-0 shimmer"></div>
                   <benefit.icon className="h-7 w-7 text-white relative z-10" />
                 </motion.div>
-                <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-emerald-600 transition-colors">
+                <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-sky-600 transition-colors">
                   {benefit.title}
                 </h3>
                 <p className="text-gray-600">{benefit.description}</p>
@@ -217,7 +217,7 @@ export default function DrivePage() {
       </section>
 
       {/* Earnings Potential */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-emerald-50 to-teal-50">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-50 to-blue-50">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{opacity: 0, y: 20}}
@@ -242,9 +242,9 @@ export default function DrivePage() {
                 viewport={{once: true}}
                 transition={{delay: idx * 0.1}}
                 whileHover={{scale: 1.05, y: -8}}
-                className="glass rounded-2xl p-8 shadow-premium-lg text-center border border-emerald-200/30 card-3d cursor-pointer"
+                className="glass rounded-2xl p-8 shadow-premium-lg text-center border border-sky-200/30 card-3d cursor-pointer"
               >
-                <div className="text-emerald-600 font-bold text-lg mb-2 gradient-text">
+                <div className="text-sky-600 font-bold text-lg mb-2 gradient-text">
                   {earning.type}
                 </div>
                 <div className="text-4xl font-bold text-gray-900 mb-2">
@@ -269,7 +269,7 @@ export default function DrivePage() {
             viewport={{once: true}}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-linear-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent">
               Requirements
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -284,10 +284,10 @@ export default function DrivePage() {
               whileInView={{opacity: 1, x: 0}}
               viewport={{once: true}}
               whileHover={{scale: 1.02, y: -5}}
-              className="glass-dark rounded-2xl p-8 border border-emerald-200/30 shadow-premium card-3d"
+              className="glass-dark rounded-2xl p-8 border border-sky-200/30 shadow-premium card-3d"
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-linear-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center">
+                <div className="w-12 h-12 bg-linear-to-br from-sky-500 to-sky-700 rounded-xl flex items-center justify-center">
                   <UserCheck className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">
@@ -297,7 +297,7 @@ export default function DrivePage() {
               <ul className="space-y-4">
                 {requirements.map((req, idx) => (
                   <li key={idx} className="flex items-start gap-3">
-                    <CheckCircle className="h-6 w-6 text-emerald-500 mt-0.5 shrink-0" />
+                    <CheckCircle className="h-6 w-6 text-sky-500 mt-0.5 shrink-0" />
                     <span className="text-gray-700">{req}</span>
                   </li>
                 ))}
@@ -310,10 +310,10 @@ export default function DrivePage() {
               whileInView={{opacity: 1, x: 0}}
               viewport={{once: true}}
               whileHover={{scale: 1.02, y: -5}}
-              className="glass-dark rounded-2xl p-8 border border-emerald-200/30 shadow-premium card-3d"
+              className="glass-dark rounded-2xl p-8 border border-sky-200/30 shadow-premium card-3d"
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-linear-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center">
+                <div className="w-12 h-12 bg-linear-to-br from-sky-500 to-sky-700 rounded-xl flex items-center justify-center">
                   <Car className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">
@@ -323,7 +323,7 @@ export default function DrivePage() {
               <ul className="space-y-4">
                 {additionalInfo.map((info, idx) => (
                   <li key={idx} className="flex items-start gap-3">
-                    <CheckCircle className="h-6 w-6 text-emerald-500 mt-0.5 shrink-0" />
+                    <CheckCircle className="h-6 w-6 text-sky-500 mt-0.5 shrink-0" />
                     <span className="text-gray-700">{info}</span>
                   </li>
                 ))}
@@ -335,7 +335,7 @@ export default function DrivePage() {
             initial={{opacity: 0, y: 20}}
             whileInView={{opacity: 1, y: 0}}
             viewport={{once: true}}
-            className="mt-8 p-6 bg-emerald-50 rounded-xl border border-emerald-200"
+            className="mt-8 p-6 bg-sky-50 rounded-xl border border-sky-200"
           >
             <p className="text-center text-gray-700">
               <strong>Note:</strong> Don&apos;t have an electric vehicle? No
@@ -347,7 +347,7 @@ export default function DrivePage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-emerald-50 to-teal-50">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-50 to-blue-50">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{opacity: 0, y: 20}}
@@ -355,7 +355,7 @@ export default function DrivePage() {
             viewport={{once: true}}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-linear-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent">
               How to Get Started
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -374,10 +374,10 @@ export default function DrivePage() {
                 className="text-center"
               >
                 <div className="relative inline-block mb-6">
-                  <div className="w-20 h-20 bg-linear-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center shadow-lg">
+                  <div className="w-20 h-20 bg-linear-to-br from-sky-500 to-sky-700 rounded-2xl flex items-center justify-center shadow-lg">
                     <step.icon className="h-10 w-10 text-white" />
                   </div>
-                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-linear-to-br from-teal-500 to-emerald-600 rounded-full flex items-center justify-center text-white font-bold shadow-md">
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-linear-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center text-white font-bold shadow-md">
                     {idx + 1}
                   </div>
                 </div>
@@ -392,7 +392,7 @@ export default function DrivePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-emerald-600 to-teal-600">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-600 to-sky-700">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{opacity: 0, y: 20}}
@@ -402,7 +402,7 @@ export default function DrivePage() {
             <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
               Ready to Start Earning?
             </h2>
-            <p className="text-xl text-emerald-50 mb-10">
+            <p className="text-xl text-sky-100 mb-10">
               Join thousands of drivers who have already chosen Zproo as their
               partner for sustainable earnings
             </p>
@@ -410,7 +410,7 @@ export default function DrivePage() {
               <motion.button
                 whileHover={{scale: 1.05, y: -2}}
                 whileTap={{scale: 0.95}}
-                className="cursor-pointer bg-white text-emerald-600 rounded-full text-lg px-10 py-4 font-bold shadow-xl hover:shadow-2xl transition-all btn-glow"
+                className="cursor-pointer bg-white text-sky-600 rounded-full text-lg px-10 py-4 font-bold shadow-xl hover:shadow-2xl transition-all btn-glow"
               >
                 Apply as Driver
               </motion.button>
