@@ -31,7 +31,7 @@ export default function ServicesPage() {
         "Professional verified drivers",
         "Cashless payments"
       ],
-      gradient: "from-emerald-500 to-emerald-600",
+      gradient: "from-sky-500 to-sky-600",
       link: "/",
       cta: "Book a Ride"
     },
@@ -49,7 +49,7 @@ export default function ServicesPage() {
         "Free charging network access",
         "24/7 roadside assistance"
       ],
-      gradient: "from-emerald-600 to-teal-600",
+      gradient: "from-yellow-400 to-yellow-500",
       link: "/rentals",
       cta: "Explore Rentals"
     },
@@ -67,7 +67,7 @@ export default function ServicesPage() {
         "Priority booking",
         "Flexible validity periods"
       ],
-      gradient: "from-teal-600 to-emerald-500",
+      gradient: "from-sky-600 to-sky-700",
       link: "/zpass",
       cta: "Get ZPass"
     }
@@ -102,9 +102,9 @@ export default function ServicesPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-36 lg:pb-28 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-emerald-50 via-white to-teal-50 overflow-hidden">
+      <section className="relative pt-32 pb-20 lg:pt-36 lg:pb-28 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-50 via-white to-blue-50 overflow-hidden">
         <motion.div
-          className="absolute top-20 left-10 w-96 h-96 bg-emerald-400/20 rounded-full blur-3xl"
+          className="absolute top-20 left-10 w-96 h-96 bg-sky-400/20 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             y: [0, 50, 0]
@@ -124,12 +124,12 @@ export default function ServicesPage() {
             className="text-center max-w-4xl mx-auto"
           >
             <div className="inline-block mb-6">
-              <span className="px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold">
+              <span className="px-4 py-2 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold">
                 ⚡ Electric Mobility Solutions
               </span>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 bg-linear-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent leading-tight">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent leading-tight">
               Complete Electric
               <br />
               Transportation Services
@@ -168,7 +168,7 @@ export default function ServicesPage() {
                 <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
                   {service.title}
                 </h2>
-                <p className="text-xl text-emerald-600 font-semibold mb-6">
+                <p className="text-xl text-sky-600 font-semibold mb-6">
                   {service.tagline}
                 </p>
                 <p className="text-lg text-gray-600 mb-8">
@@ -178,7 +178,7 @@ export default function ServicesPage() {
                 <ul className="space-y-4 mb-8">
                   {service.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <CheckCircle className="h-6 w-6 text-emerald-500 mt-0.5 shrink-0" />
+                      <CheckCircle className="h-6 w-6 text-sky-600 mt-0.5 shrink-0" />
                       <span className="text-gray-700 text-lg">{feature}</span>
                     </li>
                   ))}
@@ -208,8 +208,8 @@ export default function ServicesPage() {
                     whileHover={{scale: 1.05, y: -10}}
                     className="relative rounded-3xl overflow-hidden shadow-2xl"
                   >
-                    <div className="absolute inset-0 bg-linear-to-br from-emerald-500/20 to-teal-500/20 blur-2xl -z-10"></div>
-                    <div className="relative glass rounded-3xl p-8 border border-emerald-200/30">
+                    <div className="absolute inset-0 bg-linear-to-br from-sky-500/20 to-blue-500/20 blur-2xl -z-10"></div>
+                    <div className="relative glass rounded-3xl p-8 border border-sky-200/30">
                       <motion.div
                         animate={{
                           y: [0, -8, 0]
@@ -245,7 +245,7 @@ export default function ServicesPage() {
                       <h3 className="text-3xl font-bold text-center mb-4">
                         {service.title}
                       </h3>
-                      <p className="text-center text-emerald-50 text-lg">
+                      <p className="text-center text-white/90 text-lg">
                         {service.tagline}
                       </p>
                     </div>
@@ -258,7 +258,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-emerald-50 to-teal-50">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-50 to-blue-50">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{opacity: 0, y: 20}}
@@ -266,7 +266,7 @@ export default function ServicesPage() {
             viewport={{once: true}}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-linear-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent">
               Why Choose Zproo
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -286,7 +286,7 @@ export default function ServicesPage() {
                 whileHover={{y: -10}}
                 className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all"
               >
-                <div className="w-14 h-14 bg-linear-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mb-6">
+                <div className="w-14 h-14 bg-linear-to-br from-sky-500 to-sky-700 rounded-xl flex items-center justify-center mb-6">
                   <item.icon className="h-7 w-7 text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">
@@ -300,7 +300,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-emerald-600 to-teal-600">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-600 to-sky-700">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{opacity: 0, y: 20}}
@@ -310,7 +310,7 @@ export default function ServicesPage() {
             <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
               Ready to Go Electric?
             </h2>
-            <p className="text-xl text-emerald-50 mb-10">
+            <p className="text-xl text-white/90 mb-10">
               Choose the service that fits your needs and start your sustainable
               journey today
             </p>
@@ -319,7 +319,7 @@ export default function ServicesPage() {
                 <motion.button
                   whileHover={{scale: 1.05}}
                   whileTap={{scale: 0.95}}
-                  className="cursor-pointer bg-white text-emerald-600 rounded-full text-lg px-10 py-4 font-bold shadow-xl hover:shadow-2xl transition-all"
+                  className="cursor-pointer bg-white text-sky-600 rounded-full text-lg px-10 py-4 font-bold shadow-xl hover:shadow-2xl transition-all"
                 >
                   Book a Ride
                 </motion.button>

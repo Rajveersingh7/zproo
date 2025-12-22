@@ -128,16 +128,16 @@ export default function CareersPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-36 lg:pb-28 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-emerald-50 via-white to-teal-50">
+      <section className="relative pt-32 pb-20 lg:pt-36 lg:pb-28 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-50 via-white to-blue-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-block mb-6">
-              <span className="px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold">
+              <span className="px-4 py-2 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold">
                 💼 Join Our Team
               </span>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 bg-linear-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent leading-tight">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent leading-tight">
               Build the Future of
               <br />
               Electric Mobility
@@ -150,7 +150,7 @@ export default function CareersPage() {
 
             <a
               href="mailto:careers@zproo.com"
-              className="inline-flex items-center gap-2 bg-linear-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white rounded-full px-8 py-4 font-semibold shadow-lg transition-all cursor-pointer"
+              className="inline-flex items-center gap-2 bg-linear-to-r from-sky-500 to-blue-500 hover:from-sky-600 hover:to-sky-700 text-white rounded-full px-8 py-4 font-semibold shadow-lg transition-all cursor-pointer"
             >
               <Mail className="h-5 w-5" />
               Email Your Resume
@@ -176,9 +176,9 @@ export default function CareersPage() {
             {benefits.map((benefit, idx) => (
               <div
                 key={idx}
-                className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:border-emerald-200 hover:shadow-lg transition-all"
+                className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:border-sky-200 hover:shadow-lg transition-all"
               >
-                <div className="w-14 h-14 bg-linear-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mb-6">
+                <div className="w-14 h-14 bg-linear-to-br from-sky-500 to-sky-700 rounded-xl flex items-center justify-center mb-6">
                   <benefit.icon className="h-7 w-7 text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">
@@ -194,10 +194,10 @@ export default function CareersPage() {
       </section>
 
       {/* Our Values */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-emerald-50 to-teal-50">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-50 to-blue-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-linear-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent">
               Our Values
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -211,7 +211,7 @@ export default function CareersPage() {
                 key={idx}
                 className="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-linear-to-br from-emerald-500 to-teal-600 rounded-2xl mb-6">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-linear-to-br from-sky-500 to-sky-700 rounded-2xl mb-6">
                   <value.icon className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">
@@ -242,7 +242,7 @@ export default function CareersPage() {
             {openings.map((job, idx) => (
               <div
                 key={idx}
-                className="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:border-emerald-300 hover:shadow-lg transition-all"
+                className="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:border-sky-300 hover:shadow-lg transition-all"
               >
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
                   <div className="flex-1">
@@ -250,10 +250,10 @@ export default function CareersPage() {
                       {job.title}
                     </h3>
                     <div className="flex flex-wrap gap-3 text-sm">
-                      <span className="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full font-medium">
+                      <span className="px-3 py-1 bg-sky-100 text-sky-700 rounded-full font-medium">
                         {job.department}
                       </span>
-                      <span className="px-3 py-1 bg-teal-100 text-teal-700 rounded-full font-medium">
+                      <span className="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full font-medium">
                         {job.location}
                       </span>
                       <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full font-medium">
@@ -263,7 +263,7 @@ export default function CareersPage() {
                   </div>
                   <a
                     href="mailto:careers@zproo.com"
-                    className="inline-flex items-center justify-center px-6 py-3 bg-linear-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white rounded-full font-semibold transition-all shadow-md whitespace-nowrap cursor-pointer"
+                    className="inline-flex items-center justify-center px-6 py-3 bg-linear-to-r from-sky-500 to-blue-500 hover:from-sky-600 hover:to-sky-700 text-white rounded-full font-semibold transition-all shadow-md whitespace-nowrap cursor-pointer"
                   >
                     Apply Now
                   </a>
@@ -278,18 +278,18 @@ export default function CareersPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-emerald-600 to-teal-600">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-600 to-sky-700">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
             Don&apos;t See Your Role?
           </h2>
-          <p className="text-xl text-emerald-50 mb-8 leading-relaxed">
+          <p className="text-xl text-sky-100 mb-8 leading-relaxed">
             We&apos;re always looking for talented individuals. Send us your
             resume and let us know how you can contribute to our mission.
           </p>
           <a
             href="mailto:careers@zproo.com"
-            className="inline-flex items-center gap-2 bg-white text-emerald-600 hover:bg-emerald-50 rounded-full px-8 py-4 font-semibold shadow-lg transition-all"
+            className="inline-flex items-center gap-2 bg-white text-sky-600 hover:bg-sky-50 rounded-full px-8 py-4 font-semibold shadow-lg transition-all"
           >
             <Mail className="h-5 w-5" />
             careers@zproo.com
@@ -299,3 +299,7 @@ export default function CareersPage() {
     </main>
   );
 }
+
+
+
+

@@ -47,9 +47,9 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-white border-t border-emerald-200/20 relative overflow-hidden">
+    <footer className="bg-white border-t border-sky-200/20 relative overflow-hidden">
       {/* Decorative gradient overlay */}
-      <div className="absolute inset-0 bg-linear-to-b from-emerald-50/20 via-transparent to-teal-50/20 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-linear-to-b from-sky-50/20 via-transparent to-blue-50/20 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 relative z-10">
         {/* Logo at Top Center */}
@@ -87,7 +87,7 @@ const Footer = () => {
               transition={{delay: 0.1}}
               className="text-center md:text-left"
             >
-              <h3 className="font-bold mb-3 text-base bg-linear-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+              <h3 className="font-bold mb-3 text-base bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent">
                 Company
               </h3>
               <ul className="space-y-2">
@@ -102,7 +102,7 @@ const Footer = () => {
                     <Link href={link.href}>
                       <motion.span
                         whileHover={{x: 5}}
-                        className="text-gray-700 hover:text-emerald-600 transition-colors inline-block cursor-pointer font-medium"
+                        className="text-gray-700 hover:text-sky-600 transition-colors inline-block cursor-pointer font-medium"
                       >
                         {link.name}
                       </motion.span>
@@ -120,7 +120,7 @@ const Footer = () => {
               transition={{delay: 0.2}}
               className="text-center md:text-left"
             >
-              <h3 className="font-bold mb-4 text-lg bg-linear-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+              <h3 className="font-bold mb-4 text-lg bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent">
                 Services
               </h3>
               <ul className="space-y-3">
@@ -135,7 +135,7 @@ const Footer = () => {
                     <Link href={link.href}>
                       <motion.span
                         whileHover={{x: 5}}
-                        className="text-gray-700 hover:text-emerald-600 transition-colors inline-block cursor-pointer font-medium"
+                        className="text-gray-700 hover:text-sky-600 transition-colors inline-block cursor-pointer font-medium"
                       >
                         {link.name}
                       </motion.span>
@@ -153,7 +153,7 @@ const Footer = () => {
               transition={{delay: 0.3}}
               className="text-center md:text-left"
             >
-              <h3 className="font-bold mb-4 text-lg bg-linear-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+              <h3 className="font-bold mb-4 text-lg bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent">
                 Support
               </h3>
               <ul className="space-y-3">
@@ -168,7 +168,7 @@ const Footer = () => {
                     <Link href={link.href}>
                       <motion.span
                         whileHover={{x: 5}}
-                        className="text-gray-700 hover:text-emerald-600 transition-colors inline-block cursor-pointer font-medium"
+                        className="text-gray-700 hover:text-sky-600 transition-colors inline-block cursor-pointer font-medium"
                       >
                         {link.name}
                       </motion.span>
@@ -199,7 +199,7 @@ const Footer = () => {
               transition={{delay: 0.5 + idx * 0.1, type: "spring"}}
               whileHover={{scale: 1.2, y: -5, rotate: 360}}
               whileTap={{scale: 0.9}}
-              className="w-10 h-10 rounded-full bg-linear-to-br from-emerald-100 to-teal-100 flex items-center justify-center text-emerald-600 hover:text-white hover:from-emerald-500 hover:to-teal-500 transition-all shadow-sm hover:shadow-md cursor-pointer"
+              className="w-10 h-10 rounded-full bg-linear-to-br from-sky-100 to-blue-100 flex items-center justify-center text-sky-600 hover:text-white hover:from-sky-500 hover:to-sky-600 transition-all shadow-sm hover:shadow-md cursor-pointer"
               aria-label={social.label}
             >
               <social.icon className="h-4 w-4" />
@@ -209,7 +209,7 @@ const Footer = () => {
 
         {/* Contact Info Bar */}
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 py-6 border-t border-emerald-200/30">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 py-6 border-t border-sky-200/30">
             {[
               {
                 icon: Phone,
@@ -240,14 +240,14 @@ const Footer = () => {
                 viewport={{once: true}}
                 transition={{delay: contact.delay}}
                 whileHover={{scale: 1.05, y: -5}}
-                className="flex items-start gap-2 bg-white/60 backdrop-blur-sm rounded-lg p-3 border border-emerald-200/40 shadow-sm"
+                className="flex items-start gap-2 bg-white/60 backdrop-blur-sm rounded-lg p-3 border border-sky-200/40 shadow-sm"
               >
                 <motion.div
                   whileHover={{rotate: 360, scale: 1.1}}
                   transition={{duration: 0.5}}
-                  className="w-10 h-10 rounded-lg bg-linear-to-br from-emerald-100 to-teal-100 flex items-center justify-center shrink-0 shadow-sm"
+                  className="w-10 h-10 rounded-lg bg-linear-to-br from-sky-100 to-blue-100 flex items-center justify-center shrink-0 shadow-sm"
                 >
-                  <contact.icon className="h-4 w-4 text-emerald-600" />
+                  <contact.icon className="h-4 w-4 text-sky-600" />
                 </motion.div>
                 <div>
                   <div className="text-gray-800 font-semibold mb-0.5 text-sm">
@@ -256,7 +256,7 @@ const Footer = () => {
                   {contact.href ? (
                     <a
                       href={contact.href}
-                      className="text-gray-600 hover:text-emerald-600 transition-colors text-sm"
+                      className="text-gray-600 hover:text-sky-600 transition-colors text-sm"
                     >
                       {contact.content}
                     </a>
@@ -274,12 +274,12 @@ const Footer = () => {
           initial={{opacity: 0}}
           whileInView={{opacity: 1}}
           viewport={{once: true}}
-          className="pt-6 border-t border-emerald-200/30"
+          className="pt-6 border-t border-sky-200/30"
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-3">
             <p className="text-gray-600 text-xs text-center md:text-left">
               © {currentYear} Zproo. All rights reserved. |{" "}
-              <span className="bg-linear-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent font-semibold">
+              <span className="bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent font-semibold">
                 Ride Electrified
               </span>
             </p>
@@ -292,7 +292,7 @@ const Footer = () => {
                 <Link key={link.href} href={link.href}>
                   <motion.span
                     whileHover={{scale: 1.1}}
-                    className="text-gray-600 hover:text-emerald-600 transition-colors cursor-pointer"
+                    className="text-gray-600 hover:text-sky-600 transition-colors cursor-pointer"
                   >
                     {link.label}
                   </motion.span>

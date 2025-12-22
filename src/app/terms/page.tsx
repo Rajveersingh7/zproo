@@ -180,7 +180,7 @@ export default function TermsPage() {
   return (
     <main className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-linear-to-br from-emerald-600 to-teal-600 pt-32 pb-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-linear-to-br from-sky-600 to-sky-700 pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{opacity: 0, y: 20}}
@@ -194,7 +194,7 @@ export default function TermsPage() {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 text-white">
               Terms of Service
             </h1>
-            <p className="text-xl text-emerald-50">
+            <p className="text-xl text-sky-100">
               Last updated: December 4, 2025
             </p>
           </motion.div>
@@ -240,7 +240,7 @@ export default function TermsPage() {
                   {section.content.map((item, i) => (
                     <div key={i}>
                       {item.subtitle && (
-                        <h3 className="text-lg font-semibold text-emerald-600 mb-2">
+                        <h3 className="text-lg font-semibold text-sky-600 mb-2">
                           {item.subtitle}
                         </h3>
                       )}
@@ -259,7 +259,7 @@ export default function TermsPage() {
             initial={{opacity: 0, y: 20}}
             whileInView={{opacity: 1, y: 0}}
             viewport={{once: true}}
-            className="mt-12 bg-linear-to-br from-emerald-50 to-teal-50 rounded-2xl p-8 border border-emerald-100"
+            className="mt-12 bg-linear-to-br from-sky-50 to-blue-50 rounded-2xl p-8 border border-sky-100"
           >
             <h3 className="text-2xl font-bold mb-4 text-gray-900 text-center">
               Agreement to Terms
@@ -271,13 +271,13 @@ export default function TermsPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/privacy"
-                className="inline-block bg-white text-emerald-600 border-2 border-emerald-600 hover:bg-emerald-50 rounded-full px-8 py-4 font-bold transition-all text-center"
+                className="inline-block bg-white text-sky-600 border-2 border-sky-600 hover:bg-sky-50 rounded-full px-8 py-4 font-bold transition-all text-center"
               >
                 View Privacy Policy
               </a>
               <a
                 href="/contact"
-                className="inline-block bg-linear-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white rounded-full px-8 py-4 font-bold shadow-lg transition-all text-center"
+                className="inline-block bg-linear-to-r from-sky-500 to-blue-500 hover:from-sky-600 hover:to-sky-700 text-white rounded-full px-8 py-4 font-bold shadow-lg transition-all text-center"
               >
                 Contact Legal Team
               </a>

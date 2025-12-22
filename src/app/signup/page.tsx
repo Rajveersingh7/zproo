@@ -3,6 +3,7 @@
 import {useState} from "react";
 import Link from "next/link";
 import {useRouter} from "next/navigation";
+import {motion} from "framer-motion";
 import {ArrowLeft, Phone, Shield, User, Car, Mail} from "lucide-react";
 
 type UserType = "customer" | "driver" | null;
@@ -58,18 +59,57 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-emerald-50 via-white to-teal-50 flex items-center justify-center px-4 pt-32 pb-12">
-      <div className="w-full max-w-md">
+    <div className="min-h-screen bg-linear-to-br from-sky-50 via-white to-blue-50 flex items-center justify-center px-4 pt-32 pb-12 relative overflow-hidden">
+      {/* Animated Background Blobs */}
+      <motion.div
+        className="absolute top-20 left-10 w-72 h-72 bg-sky-400/20 rounded-full blur-3xl"
+        animate={{
+          scale: [1, 1.2, 1],
+          x: [0, 50, 0],
+          y: [0, 30, 0]
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      />
+      <motion.div
+        className="absolute bottom-20 right-10 w-96 h-96 bg-yellow-300/30 rounded-full blur-3xl"
+        animate={{
+          scale: [1, 1.3, 1],
+          x: [0, -50, 0],
+          y: [0, -30, 0]
+        }}
+        transition={{
+          duration: 25,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      />
+
+      <div className="w-full max-w-md relative z-10">
         {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Get Started</h1>
+        <motion.div
+          initial={{opacity: 0, y: -20}}
+          animate={{opacity: 1, y: 0}}
+          transition={{duration: 0.6}}
+          className="text-center mb-8"
+        >
+          <h1 className="text-3xl font-bold gradient-text mb-2">Get Started</h1>
           <p className="text-gray-600">Create your account to begin</p>
-        </div>
+        </motion.div>
 
         {/* Main Card */}
-        <div className="bg-white rounded-3xl shadow-xl p-8 relative overflow-hidden">
+        <motion.div
+          initial={{opacity: 0, y: 20}}
+          animate={{opacity: 1, y: 0}}
+          transition={{duration: 0.6, delay: 0.1}}
+          whileHover={{y: -5}}
+          className="glass rounded-3xl shadow-premium-lg p-8 relative overflow-hidden border border-sky-200/30 card-3d"
+        >
           {/* Decorative gradient */}
-          <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-emerald-500 to-teal-500"></div>
+          <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-sky-500 to-sky-600"></div>
 
           {/* Progress Indicator */}
           {step !== "selectType" && (
@@ -85,7 +125,7 @@ export default function SignupPage() {
                           step === "details")) ||
                       (s === "otp" && (step === "otp" || step === "details")) ||
                       (s === "details" && step === "details")
-                        ? "bg-linear-to-r from-emerald-500 to-teal-500"
+                        ? "bg-linear-to-r from-sky-500 to-sky-600"
                         : "bg-gray-200"
                     }`}
                   ></div>
@@ -93,7 +133,7 @@ export default function SignupPage() {
               </div>
               <button
                 onClick={handleBack}
-                className="flex items-center gap-2 text-gray-600 hover:text-emerald-600 transition"
+                className="flex items-center gap-2 text-gray-600 hover:text-sky-600 transition"
               >
                 <ArrowLeft size={20} />
                 <span>Back</span>
@@ -103,21 +143,33 @@ export default function SignupPage() {
 
           {/* Step 1: Select User Type */}
           {step === "selectType" && (
-            <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-gray-900 text-center mb-6">
+            <motion.div
+              initial={{opacity: 0}}
+              animate={{opacity: 1}}
+              transition={{duration: 0.4}}
+              className="space-y-6"
+            >
+              <h2 className="text-2xl font-bold text-gray-900 text-center mb-6 gradient-text">
                 I want to sign up as
               </h2>
 
-              <button
+              <motion.button
+                whileHover={{scale: 1.02, y: -2}}
+                whileTap={{scale: 0.98}}
                 onClick={() => handleUserTypeSelect("customer")}
-                className="w-full p-6 border-2 border-gray-200 rounded-2xl hover:border-emerald-500 hover:bg-emerald-50 transition group"
+                className="w-full p-6 border-2 border-gray-200 rounded-2xl hover:border-sky-500 hover:bg-sky-50/50 transition-all group glass-dark cursor-pointer"
               >
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 bg-linear-to-br from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition">
-                    <User className="text-white" size={32} />
-                  </div>
+                  <motion.div
+                    whileHover={{rotate: 360, scale: 1.1}}
+                    transition={{duration: 0.5}}
+                    className="w-16 h-16 bg-linear-to-br from-sky-500 to-sky-600 rounded-xl flex items-center justify-center shadow-lg relative overflow-hidden"
+                  >
+                    <div className="absolute inset-0 shimmer"></div>
+                    <User className="text-white relative z-10" size={32} />
+                  </motion.div>
                   <div className="text-left flex-1">
-                    <h3 className="text-xl font-bold text-gray-900">
+                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-sky-600 transition-colors">
                       Customer
                     </h3>
                     <p className="text-gray-600 text-sm">
@@ -125,32 +177,41 @@ export default function SignupPage() {
                     </p>
                   </div>
                 </div>
-              </button>
+              </motion.button>
 
-              <button
+              <motion.button
+                whileHover={{scale: 1.02, y: -2}}
+                whileTap={{scale: 0.98}}
                 onClick={() => handleUserTypeSelect("driver")}
-                className="w-full p-6 border-2 border-gray-200 rounded-2xl hover:border-emerald-500 hover:bg-emerald-50 transition group"
+                className="w-full p-6 border-2 border-gray-200 rounded-2xl hover:border-sky-500 hover:bg-sky-50/50 transition-all group glass-dark cursor-pointer"
               >
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 bg-linear-to-br from-emerald-600 to-teal-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition">
-                    <Car className="text-white" size={32} />
-                  </div>
+                  <motion.div
+                    whileHover={{rotate: 360, scale: 1.1}}
+                    transition={{duration: 0.5}}
+                    className="w-16 h-16 bg-linear-to-br from-sky-600 to-sky-700 rounded-xl flex items-center justify-center shadow-lg relative overflow-hidden"
+                  >
+                    <div className="absolute inset-0 shimmer"></div>
+                    <Car className="text-white relative z-10" size={32} />
+                  </motion.div>
                   <div className="text-left flex-1">
-                    <h3 className="text-xl font-bold text-gray-900">Driver</h3>
+                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-sky-600 transition-colors">
+                      Driver
+                    </h3>
                     <p className="text-gray-600 text-sm">
                       Start earning with us
                     </p>
                   </div>
                 </div>
-              </button>
-            </div>
+              </motion.button>
+            </motion.div>
           )}
 
           {/* Step 2: Enter Phone Number */}
           {step === "phone" && (
             <div className="space-y-6">
               <div className="text-center mb-6">
-                <div className="w-16 h-16 bg-linear-to-br from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-linear-to-br from-sky-500 to-sky-600 rounded-xl flex items-center justify-center mx-auto mb-4">
                   {userType === "customer" ? (
                     <User className="text-white" size={32} />
                   ) : (
@@ -174,7 +235,8 @@ export default function SignupPage() {
                     <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                       <Phone size={20} className="text-gray-400" />
                     </div>
-                    <input
+                    <motion.input
+                      whileFocus={{scale: 1.02}}
                       type="tel"
                       value={phoneNumber}
                       onChange={(e) =>
@@ -183,7 +245,7 @@ export default function SignupPage() {
                         )
                       }
                       placeholder="Enter 10-digit mobile number"
-                      className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition text-lg text-gray-900 placeholder:text-gray-500"
+                      className="input-premium w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:border-sky-500 focus:ring-2 focus:ring-sky-200 outline-none transition-all text-lg text-gray-900 placeholder:text-gray-500 bg-white/50 backdrop-blur-sm"
                       required
                       maxLength={10}
                     />
@@ -195,13 +257,17 @@ export default function SignupPage() {
                   )}
                 </div>
 
-                <button
+                <motion.button
+                  whileHover={
+                    phoneNumber.length === 10 ? {scale: 1.02, y: -2} : {}
+                  }
+                  whileTap={phoneNumber.length === 10 ? {scale: 0.98} : {}}
                   type="submit"
                   disabled={phoneNumber.length !== 10}
-                  className="w-full py-4 bg-linear-to-r from-emerald-500 to-teal-500 text-white rounded-xl font-semibold text-lg hover:from-emerald-600 hover:to-teal-600 transition shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full py-4 bg-linear-to-r from-sky-500 to-sky-600 text-white rounded-xl font-semibold text-lg hover:from-sky-600 hover:to-sky-700 transition-all shadow-lg shadow-sky-500/30 hover:shadow-xl hover:shadow-sky-500/40 disabled:opacity-50 disabled:cursor-not-allowed btn-glow"
                 >
                   Send OTP
-                </button>
+                </motion.button>
               </form>
             </div>
           )}
@@ -210,16 +276,14 @@ export default function SignupPage() {
           {step === "otp" && (
             <div className="space-y-6">
               <div className="text-center mb-6">
-                <div className="w-16 h-16 bg-linear-to-br from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-linear-to-br from-sky-500 to-sky-600 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <Shield className="text-white" size={32} />
                 </div>
                 <h2 className="text-2xl font-bold text-gray-900">Verify OTP</h2>
                 <p className="text-gray-600 text-sm mt-2">
                   Enter the 6-digit code sent to
                 </p>
-                <p className="text-emerald-600 font-semibold">
-                  +91 {phoneNumber}
-                </p>
+                <p className="text-sky-600 font-semibold">+91 {phoneNumber}</p>
               </div>
 
               <form onSubmit={handleVerifyOTP} className="space-y-6">
@@ -227,30 +291,33 @@ export default function SignupPage() {
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     OTP Code
                   </label>
-                  <input
+                  <motion.input
+                    whileFocus={{scale: 1.02}}
                     type="text"
                     value={otp}
                     onChange={(e) =>
                       setOtp(e.target.value.replace(/\D/g, "").slice(0, 6))
                     }
                     placeholder="Enter 6-digit OTP"
-                    className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition text-center text-2xl tracking-widest font-semibold text-gray-900 placeholder:text-gray-400"
+                    className="input-premium w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-sky-500 focus:ring-2 focus:ring-sky-200 outline-none transition-all text-center text-2xl tracking-widest font-semibold text-gray-900 placeholder:text-gray-400 bg-white/50 backdrop-blur-sm"
                     required
                     maxLength={6}
                   />
                 </div>
 
-                <button
+                <motion.button
+                  whileHover={otp.length === 6 ? {scale: 1.02, y: -2} : {}}
+                  whileTap={otp.length === 6 ? {scale: 0.98} : {}}
                   type="submit"
                   disabled={otp.length !== 6}
-                  className="w-full py-4 bg-linear-to-r from-emerald-500 to-teal-500 text-white rounded-xl font-semibold text-lg hover:from-emerald-600 hover:to-teal-600 transition shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full py-4 bg-linear-to-r from-sky-500 to-sky-600 text-white rounded-xl font-semibold text-lg hover:from-sky-600 hover:to-sky-700 transition-all shadow-lg shadow-sky-500/30 hover:shadow-xl hover:shadow-sky-500/40 disabled:opacity-50 disabled:cursor-not-allowed btn-glow"
                 >
                   Verify OTP
-                </button>
+                </motion.button>
 
                 <button
                   type="button"
-                  className="w-full text-emerald-600 font-medium hover:text-emerald-700 transition"
+                  className="w-full text-sky-600 font-medium hover:text-sky-700 transition"
                 >
                   Resend OTP
                 </button>
@@ -262,7 +329,7 @@ export default function SignupPage() {
           {step === "details" && (
             <div className="space-y-6">
               <div className="text-center mb-6">
-                <div className="w-16 h-16 bg-linear-to-br from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-linear-to-br from-sky-500 to-sky-600 rounded-xl flex items-center justify-center mx-auto mb-4">
                   {userType === "customer" ? (
                     <User className="text-white" size={32} />
                   ) : (
@@ -286,12 +353,13 @@ export default function SignupPage() {
                     <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                       <User size={20} className="text-gray-400" />
                     </div>
-                    <input
+                    <motion.input
+                      whileFocus={{scale: 1.02}}
                       type="text"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="Enter your full name"
-                      className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition text-gray-900 placeholder:text-gray-500"
+                      className="input-premium w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:border-sky-500 focus:ring-2 focus:ring-sky-200 outline-none transition-all text-gray-900 placeholder:text-gray-500 bg-white/50 backdrop-blur-sm"
                       required
                     />
                   </div>
@@ -305,19 +373,20 @@ export default function SignupPage() {
                     <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                       <Mail size={20} className="text-gray-400" />
                     </div>
-                    <input
+                    <motion.input
+                      whileFocus={{scale: 1.02}}
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Enter your email"
-                      className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition text-gray-900 placeholder:text-gray-500"
+                      className="input-premium w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:border-sky-500 focus:ring-2 focus:ring-sky-200 outline-none transition-all text-gray-900 placeholder:text-gray-500 bg-white/50 backdrop-blur-sm"
                     />
                   </div>
                 </div>
 
                 {userType === "driver" && (
-                  <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
-                    <p className="text-sm text-emerald-800">
+                  <div className="bg-sky-50 border border-sky-200 rounded-xl p-4">
+                    <p className="text-sm text-sky-800">
                       <strong>Next Steps:</strong> After signup, you&apos;ll
                       need to complete your driver profile with vehicle details
                       and documents.
@@ -325,13 +394,15 @@ export default function SignupPage() {
                   </div>
                 )}
 
-                <button
+                <motion.button
+                  whileHover={name ? {scale: 1.02, y: -2} : {}}
+                  whileTap={name ? {scale: 0.98} : {}}
                   type="submit"
                   disabled={!name}
-                  className="w-full py-4 bg-linear-to-r from-emerald-500 to-teal-500 text-white rounded-xl font-semibold text-lg hover:from-emerald-600 hover:to-teal-600 transition shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full py-4 bg-linear-to-r from-sky-500 to-sky-600 text-white rounded-xl font-semibold text-lg hover:from-sky-600 hover:to-sky-700 transition-all shadow-lg shadow-sky-500/30 hover:shadow-xl hover:shadow-sky-500/40 disabled:opacity-50 disabled:cursor-not-allowed btn-glow"
                 >
                   Complete Signup
-                </button>
+                </motion.button>
               </form>
             </div>
           )}
@@ -343,23 +414,23 @@ export default function SignupPage() {
                 Already have an account?{" "}
                 <Link
                   href="/login"
-                  className="text-emerald-600 font-semibold hover:text-emerald-700"
+                  className="text-sky-600 font-semibold hover:text-sky-700"
                 >
                   Log in
                 </Link>
               </p>
             </div>
           )}
-        </div>
+        </motion.div>
 
         {/* Terms */}
         <p className="text-center text-sm text-gray-500 mt-6">
           By continuing, you agree to our{" "}
-          <Link href="/terms" className="text-emerald-600 hover:underline">
+          <Link href="/terms" className="text-sky-600 hover:underline">
             Terms
           </Link>{" "}
           and{" "}
-          <Link href="/privacy" className="text-emerald-600 hover:underline">
+          <Link href="/privacy" className="text-sky-600 hover:underline">
             Privacy Policy
           </Link>
         </p>

@@ -12,15 +12,15 @@
   }
 
   .glass-dark {
-    background: rgba(16, 185, 129, 0.1);
+    background: rgba(2, 132, 199, 0.1);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid rgba(16, 185, 129, 0.2);
+    border: 1px solid rgba(2, 132, 199, 0.2);
   }
 
   /* Premium Gradient Text */
   .gradient-text {
-    @apply bg-linear-to-r from-emerald-600 via-teal-500 to-emerald-600 bg-clip-text text-transparent;
+    @apply bg-linear-to-r from-sky-600 via-sky-500 to-sky-600 bg-clip-text text-transparent;
     background-size: 200% auto;
     animation: gradient-shift 3s ease infinite;
   }
@@ -91,18 +91,18 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, #10b981, #14b8a6);
+    background: linear-gradient(to bottom, #0284c7, #0369a1);
     border-radius: 5px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(to bottom, #059669, #0d9488);
+    background: linear-gradient(to bottom, #0369a1, #075985);
   }
 
   /* Premium Input Focus */
   .input-premium:focus {
-    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1),
-      0 0 20px rgba(16, 185, 129, 0.2);
+    box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.1),
+      0 0 20px rgba(2, 132, 199, 0.2);
   }
 
   /* Shimmer Effect */
@@ -128,13 +128,13 @@
 
   /* Premium Shadow */
   .shadow-premium {
-    box-shadow: 0 10px 40px rgba(16, 185, 129, 0.15),
-      0 0 0 1px rgba(16, 185, 129, 0.05);
+    box-shadow: 0 10px 40px rgba(2, 132, 199, 0.15),
+      0 0 0 1px rgba(2, 132, 199, 0.05);
   }
 
   .shadow-premium-lg {
-    box-shadow: 0 20px 60px rgba(16, 185, 129, 0.2),
-      0 0 0 1px rgba(16, 185, 129, 0.1);
+    box-shadow: 0 20px 60px rgba(2, 132, 199, 0.2),
+      0 0 0 1px rgba(2, 132, 199, 0.1);
   }
 
   /* Apple-like smooth transitions */

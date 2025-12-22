@@ -20,7 +20,6 @@ import {Card3D} from "@/components/Card3D";
 import {MagneticButton} from "@/components/MagneticButton";
 import {RippleButton} from "@/components/RippleButton";
 import {GradientMesh} from "@/components/GradientMesh";
-import {AnimatedCounter} from "@/components/AnimatedCounter";
 import {RevealOnScroll} from "@/components/RevealOnScroll";
 import {Spotlight} from "@/components/Spotlight";
 import {TextReveal} from "@/components/TextReveal";
@@ -62,21 +61,21 @@ export default function Home() {
       title: "Eco-Friendly",
       description:
         "100% electric vehicles for zero-emission rides. Contribute to a cleaner India with every journey.",
-      gradient: "from-emerald-500 to-emerald-600"
+      gradient: "from-sky-500 to-sky-600"
     },
     {
       icon: DollarSign,
       title: "Affordable Pricing",
       description:
         "Competitive rates with transparent pricing. No surge pricing or hidden charges.",
-      gradient: "from-emerald-600 to-teal-600"
+      gradient: "from-yellow-400 to-yellow-500"
     },
     {
       icon: Shield,
       title: "Safe & Reliable",
       description:
         "Verified drivers, GPS tracking, and 24/7 customer support for your peace of mind.",
-      gradient: "from-teal-600 to-emerald-500"
+      gradient: "from-sky-600 to-sky-700"
     }
   ];
 
@@ -109,7 +108,7 @@ export default function Home() {
       {/* Hero Section - Split Layout */}
       <section
         ref={heroRef}
-        className="relative min-h-screen flex items-center overflow-hidden bg-linear-to-br from-emerald-50 via-white to-teal-50 pt-20"
+        className="relative min-h-screen flex items-center overflow-hidden bg-linear-to-br from-sky-50 via-white to-blue-50 pt-20"
       >
         {/* Animated Gradient Mesh Background */}
         <GradientMesh className="opacity-40" intensity={0.8} />
@@ -117,7 +116,7 @@ export default function Home() {
         {/* Animated Background Blobs with Parallax */}
         <motion.div
           style={{y: blob1Y}}
-          className="absolute top-20 left-10 w-72 h-72 bg-emerald-400/20 rounded-full blur-3xl hidden lg:block"
+          className="absolute top-20 left-10 w-72 h-72 bg-sky-400/20 rounded-full blur-3xl hidden lg:block"
           animate={{
             scale: [1, 1.2, 1],
             x: [0, 50, 0]
@@ -130,7 +129,7 @@ export default function Home() {
         />
         <motion.div
           style={{y: blob2Y}}
-          className="absolute bottom-20 right-10 w-96 h-96 bg-teal-400/20 rounded-full blur-3xl hidden lg:block"
+          className="absolute bottom-20 right-10 w-96 h-96 bg-yellow-300/30 rounded-full blur-3xl hidden lg:block"
           animate={{
             scale: [1, 1.3, 1],
             x: [0, -50, 0]
@@ -157,19 +156,19 @@ export default function Home() {
               <motion.div
                 whileHover={{y: -5}}
                 transition={{duration: 0.3}}
-                className="glass rounded-3xl shadow-premium-lg p-8 sm:p-10 border border-emerald-200/30 w-full flex flex-col justify-between h-full card-3d"
+                className="glass rounded-3xl shadow-premium-lg p-8 sm:p-10 border border-sky-200/30 w-full flex flex-col justify-between h-full card-3d"
               >
                 <div>
                   <motion.h2
                     initial={{opacity: 0, y: 20}}
                     animate={{opacity: 1, y: 0}}
                     transition={{delay: 0.2}}
-                    className="text-3xl sm:text-4xl font-bold gradient-text mb-8"
+                    className="text-3xl sm:text-4xl font-bold gradient-text mb-10"
                   >
                     Book Your Ride
                   </motion.h2>
 
-                  <div className="space-y-6">
+                  <div className="space-y-8">
                     {/* Pickup Location */}
                     <motion.div
                       initial={{opacity: 0, y: 10}}
@@ -182,7 +181,7 @@ export default function Home() {
                             whileHover={{rotate: 360}}
                             transition={{duration: 0.5}}
                           >
-                            <MapPin className="h-5 w-5 text-emerald-500" />
+                            <MapPin className="h-5 w-5 text-sky-500" />
                           </motion.div>
                           Pickup Location
                         </div>
@@ -191,7 +190,7 @@ export default function Home() {
                         whileFocus={{scale: 1.02}}
                         type="text"
                         placeholder="Enter pickup location"
-                        className="input-premium w-full px-5 py-4 text-base border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all text-gray-900 placeholder:text-gray-400 bg-white/50 backdrop-blur-sm"
+                        className="input-premium w-full px-5 py-4 text-base border-2 border-gray-200 rounded-xl focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10 outline-none transition-all text-gray-900 placeholder:text-gray-400 bg-white/50 backdrop-blur-sm"
                       />
                     </motion.div>
 
@@ -207,7 +206,7 @@ export default function Home() {
                             whileHover={{rotate: 360}}
                             transition={{duration: 0.5}}
                           >
-                            <Navigation className="h-5 w-5 text-teal-500" />
+                            <Navigation className="h-5 w-5 text-sky-500" />
                           </motion.div>
                           Dropoff Location
                         </div>
@@ -216,13 +215,13 @@ export default function Home() {
                         whileFocus={{scale: 1.02}}
                         type="text"
                         placeholder="Enter dropoff location"
-                        className="input-premium w-full px-5 py-4 text-base border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all text-gray-900 placeholder:text-gray-400 bg-white/50 backdrop-blur-sm"
+                        className="input-premium w-full px-5 py-4 text-base border-2 border-gray-200 rounded-xl focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10 outline-none transition-all text-gray-900 placeholder:text-gray-400 bg-white/50 backdrop-blur-sm"
                       />
                     </motion.div>
 
                     {/* See Prices Button */}
                     <MagneticButton strength={0.2}>
-                      <RippleButton className="cursor-pointer w-full bg-linear-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white rounded-xl py-5 px-6 font-bold text-xl shadow-lg shadow-emerald-500/30 hover:shadow-xl hover:shadow-emerald-500/40 transition-all flex items-center justify-center gap-2 btn-glow">
+                      <RippleButton className="cursor-pointer w-full bg-linear-to-r from-sky-500 to-sky-600 hover:from-sky-600 hover:to-sky-700 text-white rounded-xl py-5 px-6 font-bold text-xl shadow-lg shadow-sky-500/30 hover:shadow-xl hover:shadow-sky-500/40 transition-all flex items-center justify-center gap-2 btn-glow">
                         <span className="flex items-center gap-2">
                           <motion.span
                             animate={{rotate: [0, 10, -10, 0]}}
@@ -241,77 +240,6 @@ export default function Home() {
                     </MagneticButton>
                   </div>
                 </div>
-
-                {/* Quick Info with Animated Counters */}
-                <motion.div
-                  initial={{opacity: 0}}
-                  animate={{opacity: 1}}
-                  transition={{delay: 0.6}}
-                  className="pt-6 border-t border-emerald-200/50 mt-8"
-                >
-                  <div className="grid grid-cols-3 gap-4 text-center">
-                    {[
-                      {
-                        text: "100%",
-                        subtext: "Electric Fleet",
-                        color: "emerald",
-                        value: 100
-                      },
-                      {
-                        text: "24/7",
-                        subtext: "Support",
-                        color: "teal",
-                        value: 24
-                      },
-                      {
-                        text: "1000+",
-                        subtext: "Happy Riders",
-                        color: "emerald",
-                        value: 1000
-                      }
-                    ].map((item, idx) => (
-                      <motion.div
-                        key={idx}
-                        initial={{opacity: 0, scale: 0.8}}
-                        animate={{opacity: 1, scale: 1}}
-                        transition={{delay: 0.7 + idx * 0.1}}
-                        whileHover={{scale: 1.1}}
-                        className="cursor-pointer"
-                      >
-                        <div
-                          className={`${
-                            item.color === "emerald"
-                              ? "text-emerald-600"
-                              : "text-teal-600"
-                          } text-base font-semibold`}
-                        >
-                          {item.value ? (
-                            <AnimatedCounter
-                              value={item.value}
-                              suffix={
-                                item.text.includes("+")
-                                  ? "+"
-                                  : item.text.includes("%")
-                                  ? "%"
-                                  : ""
-                              }
-                              className={
-                                item.color === "emerald"
-                                  ? "text-emerald-600"
-                                  : "text-teal-600"
-                              }
-                            />
-                          ) : (
-                            item.text
-                          )}
-                        </div>
-                        <div className="text-sm text-gray-500 mt-1">
-                          {item.subtext}
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                </motion.div>
               </motion.div>
             </motion.div>
 
@@ -331,7 +259,7 @@ export default function Home() {
               >
                 <motion.span
                   whileHover={{scale: 1.05}}
-                  className="px-4 py-2 glass-dark rounded-full text-sm font-semibold text-emerald-700 border border-emerald-200/50 shadow-premium"
+                  className="px-4 py-2 glass-dark rounded-full text-sm font-semibold text-sky-700 border border-sky-200/50 shadow-premium"
                 >
                   🌱 100% Electric • Zero Emissions
                 </motion.span>
@@ -363,9 +291,9 @@ export default function Home() {
                 animate={{opacity: 1, scale: 1, rotate: 0}}
                 transition={{duration: 0.8, delay: 0.6, type: "spring"}}
                 whileHover={{scale: 1.05, rotate: 5}}
-                className="w-full max-w-md mx-auto relative"
+                className="w-full max-w-[200px] mx-auto relative"
               >
-                <div className="absolute inset-0 bg-linear-to-r from-emerald-400/20 to-teal-400/20 rounded-full blur-3xl -z-10"></div>
+                <div className="absolute inset-0 bg-linear-to-r from-sky-400/20 to-yellow-300/20 rounded-full blur-3xl -z-10"></div>
                 <Lottie
                   animationData={airplaneAnimation}
                   loop={true}
@@ -383,7 +311,7 @@ export default function Home() {
           transition={{duration: 2, repeat: Infinity}}
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden lg:block z-20"
         >
-          <ChevronDown className="h-8 w-8 text-emerald-500" />
+          <ChevronDown className="h-8 w-8 text-sky-500" />
         </motion.div>
       </section>
 
@@ -398,14 +326,14 @@ export default function Home() {
           style={{y: servicesY}}
           className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none"
         >
-          <div className="absolute top-20 left-20 w-64 h-64 bg-emerald-400 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-80 h-80 bg-teal-400 rounded-full blur-3xl"></div>
+          <div className="absolute top-20 left-20 w-64 h-64 bg-sky-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-80 h-80 bg-yellow-300 rounded-full blur-3xl"></div>
         </motion.div>
         <div className="max-w-7xl mx-auto">
           <RevealOnScroll delay={0.1}>
             <div className="text-center mb-10 sm:mb-16">
               <TextReveal delay={0.2}>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 bg-linear-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent pb-2">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent pb-2">
                   Why Choose Zproo
                 </h2>
               </TextReveal>
@@ -429,7 +357,7 @@ export default function Home() {
                   <Spotlight intensity={0.15}>
                     <Card3D
                       intensity={12}
-                      className="glass rounded-2xl sm:rounded-3xl shadow-premium hover:shadow-premium-lg transition-all duration-300 border border-emerald-200/30 p-6 sm:p-8 cursor-pointer h-full"
+                      className="glass rounded-2xl sm:rounded-3xl shadow-premium hover:shadow-premium-lg transition-all duration-300 border border-sky-200/30 p-6 sm:p-8 cursor-pointer h-full"
                     >
                       <motion.div
                         whileHover={{rotate: 360, scale: 1.1}}
@@ -439,7 +367,7 @@ export default function Home() {
                         <div className="absolute inset-0 shimmer"></div>
                         <service.icon className="h-7 w-7 sm:h-8 sm:w-8 text-white relative z-10" />
                       </motion.div>
-                      <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-gray-900 group-hover:text-emerald-600 transition-colors">
+                      <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-gray-900 group-hover:text-sky-600 transition-colors">
                         {service.title}
                       </h3>
                       <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
@@ -464,14 +392,14 @@ export default function Home() {
           style={{y: stepsY}}
           className="absolute inset-0 opacity-5 pointer-events-none"
         >
-          <div className="absolute top-10 right-10 w-96 h-96 bg-linear-to-br from-emerald-400 to-teal-400 rounded-full blur-3xl"></div>
+          <div className="absolute top-10 right-10 w-96 h-96 bg-linear-to-br from-sky-400 to-sky-500 rounded-full blur-3xl"></div>
         </motion.div>
 
         <div className="max-w-7xl mx-auto relative z-10">
           <RevealOnScroll delay={0.1}>
             <div className="text-center mb-10 sm:mb-16">
               <TextReveal delay={0.2}>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 bg-linear-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent pb-2">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent pb-2">
                   Simple Process
                 </h2>
               </TextReveal>
@@ -505,7 +433,7 @@ export default function Home() {
                       repeat: Infinity,
                       ease: "linear"
                     }}
-                    className="w-20 h-20 sm:w-24 sm:h-24 bg-linear-to-br from-emerald-500 to-teal-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-premium-lg relative overflow-hidden"
+                    className="w-20 h-20 sm:w-24 sm:h-24 bg-linear-to-br from-sky-500 to-sky-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-premium-lg relative overflow-hidden"
                   >
                     <div className="absolute inset-0 bg-linear-to-br from-white/20 to-transparent"></div>
                     <step.icon className="h-10 w-10 sm:h-12 sm:w-12 text-white relative z-10" />
@@ -513,12 +441,12 @@ export default function Home() {
                   <motion.div
                     whileHover={{scale: 1.2, rotate: 360}}
                     transition={{duration: 0.5}}
-                    className="absolute -top-2 sm:-top-3 -right-2 sm:-right-3 w-8 h-8 sm:w-10 sm:h-10 bg-linear-to-br from-teal-500 to-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-base sm:text-lg shadow-lg border-2 border-white"
+                    className="absolute -top-2 sm:-top-3 -right-2 sm:-right-3 w-8 h-8 sm:w-10 sm:h-10 bg-linear-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center text-white font-bold text-base sm:text-lg shadow-lg border-2 border-white"
                   >
                     {step.number}
                   </motion.div>
                 </motion.div>
-                <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-gray-900 group-hover:text-emerald-600 transition-colors px-4">
+                <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-gray-900 group-hover:text-sky-600 transition-colors px-4">
                   {step.title}
                 </h3>
                 <p className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-xs mx-auto px-4">
@@ -531,7 +459,7 @@ export default function Home() {
       </section>
 
       {/* Quick Questions Section */}
-      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-emerald-50 to-teal-50">
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-50 to-blue-50">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{opacity: 0, y: 20}}
@@ -540,7 +468,7 @@ export default function Home() {
             transition={{duration: 0.6}}
             className="text-center mb-8 sm:mb-12"
           >
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 bg-linear-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent">
               Quick Questions?
             </h2>
             <p className="text-base sm:text-lg lg:text-xl text-gray-600">
@@ -579,7 +507,7 @@ export default function Home() {
                 viewport={{once: true}}
                 transition={{delay: card.delay}}
                 whileHover={{y: -8, scale: 1.02}}
-                className="glass rounded-xl sm:rounded-2xl p-5 sm:p-6 shadow-premium hover:shadow-premium-lg border border-emerald-200/30 card-3d cursor-pointer group"
+                className="glass rounded-xl sm:rounded-2xl p-5 sm:p-6 shadow-premium hover:shadow-premium-lg border border-sky-200/30 card-3d cursor-pointer group"
               >
                 <motion.div
                   animate={{y: [0, -5, 0]}}
@@ -592,7 +520,7 @@ export default function Home() {
                 >
                   {card.emoji}
                 </motion.div>
-                <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-900 group-hover:text-emerald-600 transition-colors">
+                <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-900 group-hover:text-sky-600 transition-colors">
                   {card.title}
                 </h3>
                 <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">
@@ -601,7 +529,7 @@ export default function Home() {
                 <Link href={card.href}>
                   <motion.span
                     whileHover={{x: 5}}
-                    className="text-emerald-600 font-semibold hover:text-emerald-700 inline-flex items-center gap-1"
+                    className="text-sky-600 font-semibold hover:text-sky-700 inline-flex items-center gap-1"
                   >
                     {card.title === "Book a Ride" && "Book Now"}
                     {card.title === "Get ZPass" && "Learn More"}

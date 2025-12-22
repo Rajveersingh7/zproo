@@ -22,7 +22,7 @@ const icons = {
 };
 
 const colors = {
-  success: "from-emerald-500 to-emerald-600",
+  success: "from-sky-500 to-sky-600",
   error: "from-red-500 to-red-600",
   info: "from-blue-500 to-blue-600",
   warning: "from-yellow-500 to-yellow-600"
