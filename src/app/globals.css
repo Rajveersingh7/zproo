@@ -18,6 +18,15 @@
     border: 1px solid rgba(2, 132, 199, 0.2);
   }
 
+  /* Reduce backdrop blur on mobile for performance */
+  @media (max-width: 1023px) {
+    .glass,
+    .glass-dark {
+      backdrop-filter: blur(8px) saturate(150%) !important;
+      -webkit-backdrop-filter: blur(8px) saturate(150%) !important;
+    }
+  }
+
   /* Premium Gradient Text */
   .gradient-text {
     @apply bg-linear-to-r from-sky-600 via-sky-500 to-sky-600 bg-clip-text text-transparent;
@@ -105,25 +114,9 @@
       0 0 20px rgba(2, 132, 199, 0.2);
   }
 
-  /* Shimmer Effect */
+  /* Shimmer Effect - Disabled for performance */
   .shimmer {
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.3) 50%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    background-size: 200% 100%;
-    animation: shimmer 2s infinite;
-  }
-
-  @keyframes shimmer {
-    0% {
-      background-position: -200% 0;
-    }
-    100% {
-      background-position: 200% 0;
-    }
+    display: none;
   }
 
   /* Premium Shadow */
@@ -137,9 +130,53 @@
       0 0 0 1px rgba(2, 132, 199, 0.1);
   }
 
-  /* Apple-like smooth transitions */
-  * {
+  /* Optimized transitions - only on interactive elements */
+  button,
+  a,
+  [role="button"],
+  input,
+  textarea,
+  select {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+
+  /* Fast hover transitions for better performance */
+  a,
+  button,
+  [role="button"] {
+    transition-property: color, background-color, border-color, transform, opacity, box-shadow;
+    transition-duration: 150ms;
+    transition-timing-function: ease-out;
+  }
+
+  /* Optimize all transition-all to be faster */
+  [class*="transition-all"] {
+    transition-duration: 150ms !important;
+    transition-timing-function: ease-out !important;
+  }
+
+  /* Optimize hover transitions specifically */
+  [class*="hover:"] {
+    transition-duration: 150ms;
+    transition-timing-function: ease-out;
+  }
+
+  /* Mobile-specific optimizations */
+  @media (max-width: 1023px) {
+    /* Reduce transition duration on mobile for better performance */
+    a,
+    button,
+    [role="button"],
+    [class*="transition"] {
+      transition-duration: 120ms !important;
+    }
+    
+    /* Simplify hover effects on mobile - keep only essential ones */
+    [class*="hover:scale"]:not([class*="motion"]),
+    [class*="hover:rotate"]:not([class*="motion"]) {
+      transition: transform 120ms ease-out !important;
+    }
   }
 
   /* Premium text rendering */
@@ -171,4 +208,95 @@
 .page-transition {
   will-change: opacity, transform;
   background: transparent;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Optimize page transitions on mobile */
+@media (max-width: 1023px) {
+  .page-transition {
+    will-change: opacity;
+  }
+}
+
+/* Performance Optimizations */
+@media (max-width: 1023px) {
+  /* Disable heavy blur effects on mobile */
+  [class*="blur-3xl"] {
+    display: none !important;
+  }
+  
+  /* Reduce animation complexity on mobile */
+  .card-3d:hover {
+    transform: translateY(-4px) !important;
+  }
+}
+
+/* GPU acceleration for animations - only when needed */
+.motion-div[data-animating="true"],
+[class*="motion"][data-animating="true"] {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Remove will-change when not animating to prevent memory issues */
+.motion-div:not([data-animating="true"]),
+[class*="motion"]:not([data-animating="true"]) {
+  will-change: auto;
+}
+
+/* Optimize scroll performance */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  scroll-padding-top: 80px;
+}
+
+/* Force hardware acceleration for smoother scrolling - only on animated elements */
+[class*="motion"],
+.motion-div,
+.glass {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* Only set will-change when actually animating */
+[class*="motion"][data-animating="true"] {
+  will-change: transform, opacity;
+}
+
+/* Optimize repaints during scroll */
+body {
+  contain: layout style paint;
+}
+
+/* Prevent layout shifts during scroll */
+section {
+  contain: layout;
+}
+
+/* Optimize body for better scroll performance */
+body {
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reduce motion on low-end devices and respect user preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .gradient-text {
+    animation: none !important;
+  }
 }

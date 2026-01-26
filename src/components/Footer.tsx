@@ -25,8 +25,9 @@ const Footer = () => {
       {name: "Careers", href: "/careers"}
     ],
     services: [
-      {name: "Book a Ride", href: "/"},
+      {name: "Book a Ride", href: "/ride"},
       {name: "Vehicle Rentals", href: "/rentals"},
+      {name: "Self Drive", href: "/self-drive"},
       {name: "ZPass", href: "/zpass"},
       {name: "Drive with Us", href: "/drive"}
     ],
@@ -51,18 +52,20 @@ const Footer = () => {
       {/* Decorative gradient overlay */}
       <div className="absolute inset-0 bg-linear-to-b from-sky-50/20 via-transparent to-blue-50/20 pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10 relative z-10">
         {/* Logo at Top Center */}
         <motion.div
-          initial={{opacity: 0, y: 20}}
+          initial={{opacity: 0, y: 10}}
           whileInView={{opacity: 1, y: 0}}
           viewport={{once: true}}
+          transition={{duration: 0.2, ease: "easeOut"}}
           className="flex justify-center mb-6"
         >
           <Link href="/" className="inline-block">
             <motion.div
-              whileHover={{scale: 1.1, rotate: 5}}
+              whileHover={{scale: 1.05}}
               whileTap={{scale: 0.95}}
+              transition={{duration: 0.15, ease: "easeOut"}}
             >
               <Image
                 src="/icon.png"
@@ -70,7 +73,7 @@ const Footer = () => {
                 width={60}
                 height={60}
                 priority
-                className="transition-all drop-shadow-lg"
+                className="transition-transform duration-150 ease-out drop-shadow-lg"
               />
             </motion.div>
           </Link>
@@ -78,13 +81,13 @@ const Footer = () => {
 
         {/* Three Sections */}
         <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
             {/* Company Links */}
             <motion.div
-              initial={{opacity: 0, y: 20}}
+              initial={{opacity: 0, y: 10}}
               whileInView={{opacity: 1, y: 0}}
               viewport={{once: true}}
-              transition={{delay: 0.1}}
+              transition={{duration: 0.2, ease: "easeOut"}}
               className="text-center md:text-left"
             >
               <h3 className="font-bold mb-3 text-base bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent">
@@ -94,18 +97,15 @@ const Footer = () => {
                 {footerLinks.company.map((link, idx) => (
                   <motion.li
                     key={link.name}
-                    initial={{opacity: 0, x: -10}}
-                    whileInView={{opacity: 1, x: 0}}
+                    initial={{opacity: 0}}
+                    whileInView={{opacity: 1}}
                     viewport={{once: true}}
-                    transition={{delay: 0.2 + idx * 0.05}}
+                    transition={{duration: 0.15, delay: idx * 0.02}}
                   >
                     <Link href={link.href}>
-                      <motion.span
-                        whileHover={{x: 5}}
-                        className="text-gray-700 hover:text-sky-600 transition-colors inline-block cursor-pointer font-medium"
-                      >
+                      <span className="text-gray-700 hover:text-sky-600 transition-colors duration-150 ease-out inline-block cursor-pointer font-medium">
                         {link.name}
-                      </motion.span>
+                      </span>
                     </Link>
                   </motion.li>
                 ))}
@@ -114,10 +114,10 @@ const Footer = () => {
 
             {/* Services Links */}
             <motion.div
-              initial={{opacity: 0, y: 20}}
+              initial={{opacity: 0, y: 10}}
               whileInView={{opacity: 1, y: 0}}
               viewport={{once: true}}
-              transition={{delay: 0.2}}
+              transition={{duration: 0.2, ease: "easeOut", delay: 0.05}}
               className="text-center md:text-left"
             >
               <h3 className="font-bold mb-4 text-lg bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent">
@@ -127,18 +127,15 @@ const Footer = () => {
                 {footerLinks.services.map((link, idx) => (
                   <motion.li
                     key={link.name}
-                    initial={{opacity: 0, x: -10}}
-                    whileInView={{opacity: 1, x: 0}}
+                    initial={{opacity: 0}}
+                    whileInView={{opacity: 1}}
                     viewport={{once: true}}
-                    transition={{delay: 0.3 + idx * 0.05}}
+                    transition={{duration: 0.15, delay: idx * 0.02}}
                   >
                     <Link href={link.href}>
-                      <motion.span
-                        whileHover={{x: 5}}
-                        className="text-gray-700 hover:text-sky-600 transition-colors inline-block cursor-pointer font-medium"
-                      >
+                      <span className="text-gray-700 hover:text-sky-600 transition-colors duration-150 ease-out inline-block cursor-pointer font-medium">
                         {link.name}
-                      </motion.span>
+                      </span>
                     </Link>
                   </motion.li>
                 ))}
@@ -182,9 +179,10 @@ const Footer = () => {
 
         {/* Social Media Icons */}
         <motion.div
-          initial={{opacity: 0, y: 20}}
+          initial={{opacity: 0, y: 10}}
           whileInView={{opacity: 1, y: 0}}
           viewport={{once: true}}
+          transition={{duration: 0.2, ease: "easeOut"}}
           className="flex justify-center gap-3 mb-6"
         >
           {socialLinks.map((social, idx) => (
@@ -193,13 +191,13 @@ const Footer = () => {
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{opacity: 0, scale: 0}}
+              initial={{opacity: 0, scale: 0.8}}
               whileInView={{opacity: 1, scale: 1}}
               viewport={{once: true}}
-              transition={{delay: 0.5 + idx * 0.1, type: "spring"}}
-              whileHover={{scale: 1.2, y: -5, rotate: 360}}
-              whileTap={{scale: 0.9}}
-              className="w-10 h-10 rounded-full bg-linear-to-br from-sky-100 to-blue-100 flex items-center justify-center text-sky-600 hover:text-white hover:from-sky-500 hover:to-sky-600 transition-all shadow-sm hover:shadow-md cursor-pointer"
+              transition={{duration: 0.15, delay: idx * 0.03, ease: "easeOut"}}
+              whileHover={{scale: 1.1, y: -2}}
+              whileTap={{scale: 0.95}}
+              className="w-10 h-10 rounded-full bg-linear-to-br from-sky-100 to-blue-100 flex items-center justify-center text-sky-600 hover:text-white hover:from-sky-500 hover:to-sky-600 transition-all duration-150 ease-out shadow-sm hover:shadow-md cursor-pointer"
               aria-label={social.label}
             >
               <social.icon className="h-4 w-4" />
@@ -274,6 +272,7 @@ const Footer = () => {
           initial={{opacity: 0}}
           whileInView={{opacity: 1}}
           viewport={{once: true}}
+          transition={{duration: 0.2, ease: "easeOut"}}
           className="pt-6 border-t border-sky-200/30"
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-3">
@@ -290,12 +289,9 @@ const Footer = () => {
                 {href: "/contact", label: "Contact"}
               ].map((link) => (
                 <Link key={link.href} href={link.href}>
-                  <motion.span
-                    whileHover={{scale: 1.1}}
-                    className="text-gray-600 hover:text-sky-600 transition-colors cursor-pointer"
-                  >
+                  <span className="text-gray-600 hover:text-sky-600 transition-colors duration-150 ease-out cursor-pointer">
                     {link.label}
-                  </motion.span>
+                  </span>
                 </Link>
               ))}
             </div>

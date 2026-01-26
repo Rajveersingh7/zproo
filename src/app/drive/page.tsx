@@ -101,16 +101,10 @@ export default function DrivePage() {
     }
   ];
 
-  const earnings = [
-    {type: "Daily", amount: "₹1,500 - ₹2,500", hours: "8-10 hours"},
-    {type: "Weekly", amount: "₹10,000 - ₹17,500", hours: "6 days"},
-    {type: "Monthly", amount: "₹40,000 - ₹70,000", hours: "Full-time"}
-  ];
-
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-36 lg:pb-28 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-50 via-white to-blue-50 overflow-hidden">
+      <section className="relative pt-20 pb-8 sm:pt-24 sm:pb-10 lg:pt-28 lg:pb-12 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-50 via-white to-blue-50 overflow-hidden min-h-screen flex items-center">
         <motion.div
           className="absolute top-20 right-10 w-96 h-96 bg-yellow-300/30 rounded-full blur-3xl"
           animate={{
@@ -124,43 +118,43 @@ export default function DrivePage() {
           }}
         />
 
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className="max-w-7xl mx-auto relative z-10 w-full">
           <motion.div
             initial={{opacity: 0, y: 20}}
             animate={{opacity: 1, y: 0}}
             transition={{duration: 0.8}}
             className="text-center max-w-4xl mx-auto"
           >
-            <div className="inline-block mb-6">
-              <span className="px-4 py-2 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold">
+            <div className="inline-block mb-3 sm:mb-4">
+              <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-sky-100 text-sky-700 rounded-full text-xs sm:text-sm font-semibold">
                 🚗 Drive with Zproo
               </span>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent leading-tight">
               Drive Electric,
               <br />
               Earn More
             </h1>
 
-            <p className="text-xl sm:text-2xl text-gray-600 mb-10">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-5 sm:mb-6 lg:mb-8 px-2">
               Join India&apos;s fastest-growing electric mobility platform as a
               driver. Drive our premium electric vehicles, set your schedule,
               and earn competitive pay without any vehicle investment.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <motion.button
                 whileHover={{scale: 1.05, y: -2}}
                 whileTap={{scale: 0.95}}
-                className="cursor-pointer bg-linear-to-r from-sky-500 to-blue-500 hover:from-sky-600 hover:to-sky-700 text-white rounded-full text-lg px-10 py-4 font-semibold transition-all shadow-lg shadow-sky-500/30 hover:shadow-xl hover:shadow-sky-500/40 btn-glow"
+                className="cursor-pointer bg-linear-to-r from-sky-500 to-blue-500 hover:from-sky-600 hover:to-sky-700 text-white rounded-full text-base sm:text-lg px-8 sm:px-10 py-3.5 sm:py-4 font-semibold transition-all shadow-lg shadow-sky-500/30 hover:shadow-xl hover:shadow-sky-500/40 btn-glow min-h-[48px]"
               >
                 Apply Now
               </motion.button>
               <motion.button
                 whileHover={{scale: 1.05, y: -2}}
                 whileTap={{scale: 0.95}}
-                className="cursor-pointer border-2 border-sky-500 text-sky-600 hover:bg-sky-50/50 glass rounded-full text-lg px-10 py-4 font-semibold transition-all shadow-premium hover:shadow-premium-lg"
+                className="cursor-pointer border-2 border-sky-500 text-sky-600 hover:bg-sky-50/50 glass rounded-full text-base sm:text-lg px-8 sm:px-10 py-3.5 sm:py-4 font-semibold transition-all shadow-premium hover:shadow-premium-lg min-h-[48px]"
               >
                 <a href="tel:+91XXXXXXXXXX">Call Us</a>
               </motion.button>
@@ -172,12 +166,7 @@ export default function DrivePage() {
       {/* Benefits Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{opacity: 0, y: 20}}
-            whileInView={{opacity: 1, y: 0}}
-            viewport={{once: true}}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent">
               Why Drive with Zproo?
             </h2>
@@ -185,76 +174,22 @@ export default function DrivePage() {
               Experience the benefits of being part of India&apos;s premier
               electric mobility platform
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, idx) => (
-              <motion.div
+              <div
                 key={idx}
-                initial={{opacity: 0, y: 30}}
-                whileInView={{opacity: 1, y: 0}}
-                viewport={{once: true}}
-                transition={{delay: idx * 0.1}}
-                whileHover={{y: -12, scale: 1.02}}
-                className="glass rounded-2xl p-8 border border-sky-200/30 shadow-premium hover:shadow-premium-lg card-3d cursor-pointer"
+                className="glass rounded-2xl p-8 border border-sky-200/30 shadow-premium hover:shadow-premium-lg transition-all"
               >
-                <motion.div
-                  whileHover={{rotate: 360, scale: 1.1}}
-                  transition={{duration: 0.6, type: "spring"}}
-                  className="w-14 h-14 bg-linear-to-br from-sky-500 to-sky-700 rounded-xl flex items-center justify-center mb-6 shadow-lg relative overflow-hidden"
-                >
-                  <div className="absolute inset-0 shimmer"></div>
-                  <benefit.icon className="h-7 w-7 text-white relative z-10" />
-                </motion.div>
-                <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-sky-600 transition-colors">
+                <div className="w-14 h-14 bg-linear-to-br from-sky-500 to-sky-700 rounded-xl flex items-center justify-center mb-6 shadow-lg">
+                  <benefit.icon className="h-7 w-7 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-gray-900">
                   {benefit.title}
                 </h3>
                 <p className="text-gray-600">{benefit.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Earnings Potential */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-50 to-blue-50">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{opacity: 0, y: 20}}
-            whileInView={{opacity: 1, y: 0}}
-            viewport={{once: true}}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
-              Earnings Potential
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Estimated earnings based on active driving hours
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {earnings.map((earning, idx) => (
-              <motion.div
-                key={idx}
-                initial={{opacity: 0, y: 30}}
-                whileInView={{opacity: 1, y: 0}}
-                viewport={{once: true}}
-                transition={{delay: idx * 0.1}}
-                whileHover={{scale: 1.05, y: -8}}
-                className="glass rounded-2xl p-8 shadow-premium-lg text-center border border-sky-200/30 card-3d cursor-pointer"
-              >
-                <div className="text-sky-600 font-bold text-lg mb-2 gradient-text">
-                  {earning.type}
-                </div>
-                <div className="text-4xl font-bold text-gray-900 mb-2">
-                  {earning.amount}
-                </div>
-                <div className="text-gray-600">{earning.hours}</div>
-                <div className="mt-6 text-sm text-gray-500">
-                  * Earnings may vary based on location and hours worked
-                </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -263,28 +198,18 @@ export default function DrivePage() {
       {/* Requirements */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{opacity: 0, y: 20}}
-            whileInView={{opacity: 1, y: 0}}
-            viewport={{once: true}}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent">
               Requirements
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               What you need to become a Zproo driver partner
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Driver Requirements */}
-            <motion.div
-              initial={{opacity: 0, x: -30}}
-              whileInView={{opacity: 1, x: 0}}
-              viewport={{once: true}}
-              whileHover={{scale: 1.02, y: -5}}
-              className="glass-dark rounded-2xl p-8 border border-sky-200/30 shadow-premium card-3d"
+            <div className="glass-dark rounded-2xl p-8 border border-sky-200/30 shadow-premium transition-all"
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-linear-to-br from-sky-500 to-sky-700 rounded-xl flex items-center justify-center">
@@ -302,15 +227,10 @@ export default function DrivePage() {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
 
             {/* Vehicle Requirements */}
-            <motion.div
-              initial={{opacity: 0, x: 30}}
-              whileInView={{opacity: 1, x: 0}}
-              viewport={{once: true}}
-              whileHover={{scale: 1.02, y: -5}}
-              className="glass-dark rounded-2xl p-8 border border-sky-200/30 shadow-premium card-3d"
+            <div className="glass-dark rounded-2xl p-8 border border-sky-200/30 shadow-premium transition-all"
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-linear-to-br from-sky-500 to-sky-700 rounded-xl flex items-center justify-center">
@@ -328,49 +248,36 @@ export default function DrivePage() {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
           </div>
 
-          <motion.div
-            initial={{opacity: 0, y: 20}}
-            whileInView={{opacity: 1, y: 0}}
-            viewport={{once: true}}
-            className="mt-8 p-6 bg-sky-50 rounded-xl border border-sky-200"
+          <div className="mt-8 p-6 bg-sky-50 rounded-xl border border-sky-200"
           >
             <p className="text-center text-gray-700">
               <strong>Note:</strong> Don&apos;t have an electric vehicle? No
               problem! Contact us to learn about our vehicle leasing and
               financing options.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* How It Works */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-50 to-blue-50">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{opacity: 0, y: 20}}
-            whileInView={{opacity: 1, y: 0}}
-            viewport={{once: true}}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent">
               How to Get Started
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Join Zproo in 4 simple steps and start earning
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, idx) => (
-              <motion.div
+              <div
                 key={idx}
-                initial={{opacity: 0, y: 30}}
-                whileInView={{opacity: 1, y: 0}}
-                viewport={{once: true}}
-                transition={{delay: idx * 0.1}}
                 className="text-center"
               >
                 <div className="relative inline-block mb-6">
@@ -385,7 +292,7 @@ export default function DrivePage() {
                   {step.title}
                 </h3>
                 <p className="text-gray-600">{step.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -394,11 +301,7 @@ export default function DrivePage() {
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-600 to-sky-700">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{opacity: 0, y: 20}}
-            whileInView={{opacity: 1, y: 0}}
-            viewport={{once: true}}
-          >
+          <div>
             <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
               Ready to Start Earning?
             </h2>
@@ -424,7 +327,7 @@ export default function DrivePage() {
                 </motion.button>
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </main>

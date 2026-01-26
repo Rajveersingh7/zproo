@@ -17,7 +17,11 @@ export function RevealOnScroll({
   className = ""
 }: RevealOnScrollProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, {once: true, margin: "-100px"});
+  // Reduce margin on mobile for better performance
+  const isInView = useInView(ref, {
+    once: true,
+    margin: typeof window !== "undefined" && window.innerWidth < 1024 ? "-50px" : "-100px"
+  });
   const controls = useAnimation();
 
   useEffect(() => {
@@ -26,20 +30,15 @@ export function RevealOnScroll({
     }
   }, [isInView, controls]);
 
+  // Simplified animation - just opacity fade for smoother performance
   const variants = {
     hidden: {
-      opacity: 0,
-      y: direction === "up" ? 60 : direction === "down" ? -60 : 0,
-      x: direction === "left" ? 60 : direction === "right" ? -60 : 0,
-      scale: 0.95
+      opacity: 0
     },
     visible: {
       opacity: 1,
-      y: 0,
-      x: 0,
-      scale: 1,
       transition: {
-        duration: 0.6,
+        duration: 0.3,
         delay,
         ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number]
       }

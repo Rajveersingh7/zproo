@@ -2,54 +2,9 @@
 
 import Link from "next/link";
 import {motion} from "framer-motion";
-import {Shield, Clock, CheckCircle, Zap, Leaf, IndianRupee} from "lucide-react";
+import {Shield, Clock, Leaf, User} from "lucide-react";
 
 export default function RentalsPage() {
-  const rentalPlans = [
-    {
-      duration: "Daily",
-      price: "1,499",
-      features: [
-        "24-hour rental period",
-        "150 km included",
-        "Free home delivery",
-        "₹10/km after limit",
-        "Full insurance coverage",
-        "24/7 roadside assistance"
-      ],
-      popular: false
-    },
-    {
-      duration: "Weekly",
-      price: "8,999",
-      features: [
-        "7-day rental period",
-        "1,200 km included",
-        "Free home delivery & pickup",
-        "₹8/km after limit",
-        "Full insurance coverage",
-        "Priority customer support",
-        "Free car wash"
-      ],
-      popular: true
-    },
-    {
-      duration: "Monthly",
-      price: "29,999",
-      features: [
-        "30-day rental period",
-        "5,000 km included",
-        "Free home delivery & pickup",
-        "₹6/km after limit",
-        "Comprehensive insurance",
-        "Dedicated support manager",
-        "Free maintenance & servicing",
-        "Vehicle swap option"
-      ],
-      popular: false
-    }
-  ];
-
   /* Vehicles data - for future use
   const vehicles = [
     {
@@ -78,6 +33,11 @@ export default function RentalsPage() {
 
   const benefits = [
     {
+      icon: User,
+      title: "Dedicated Driver",
+      description: "A professional chauffeur is included for the entire rental—sit back and relax"
+    },
+    {
       icon: Leaf,
       title: "100% Electric",
       description: "Zero emissions, eco-friendly transportation"
@@ -90,12 +50,7 @@ export default function RentalsPage() {
     {
       icon: Clock,
       title: "Flexible Duration",
-      description: "Rent for a day, week, or month as needed"
-    },
-    {
-      icon: Zap,
-      title: "Free Charging",
-      description: "Access to our charging network at no extra cost"
+      description: "Rent for a day, week, or month with a driver as needed"
     }
   ];
 
@@ -108,24 +63,24 @@ export default function RentalsPage() {
     {
       number: "2",
       title: "Pick Duration",
-      description: "Choose daily, weekly, or monthly rental"
+      description: "Choose daily, weekly, or monthly rental with driver"
     },
     {
       number: "3",
       title: "Complete Booking",
-      description: "Submit documents and make payment"
+      description: "Confirm your details and make payment"
     },
     {
       number: "4",
-      title: "Get Your Car",
-      description: "We'll deliver the car to your doorstep"
+      title: "Meet Your Driver",
+      description: "We'll bring the vehicle with a chauffeur to your doorstep"
     }
   ];
 
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-36 lg:pb-28 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-50 via-white to-blue-50 overflow-hidden">
+      <section className="relative pt-20 pb-8 sm:pt-24 sm:pb-10 lg:pt-28 lg:pb-12 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-50 via-white to-blue-50 overflow-hidden min-h-screen flex items-center">
         <motion.div
           className="absolute top-20 right-10 w-96 h-96 bg-sky-400/20 rounded-full blur-3xl"
           animate={{
@@ -139,43 +94,43 @@ export default function RentalsPage() {
           }}
         />
 
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className="max-w-7xl mx-auto relative z-10 w-full">
           <motion.div
             initial={{opacity: 0, y: 20}}
-            animate={{opacity: 1, y: 0}}
-            transition={{duration: 0.8}}
-            className="text-center max-w-4xl mx-auto"
+            animate={{opacity: 1}}
+            transition={{duration: 0.3}}
+            className="text-center max-w-4xl mx-auto px-2"
           >
-            <div className="inline-block mb-6">
-              <span className="px-4 py-2 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold">
-                🚗 Electric Vehicle Rentals
+            <div className="inline-block mb-3 sm:mb-4">
+              <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-sky-100 text-sky-700 rounded-full text-xs sm:text-sm font-semibold">
+                🚗 Chauffeur-Driven EV Rentals
               </span>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent leading-tight">
               Rent Electric,
               <br />
-              Drive Sustainable
+              Ride in Comfort
             </h1>
 
-            <p className="text-xl sm:text-2xl text-gray-600 mb-10">
-              Experience the future of mobility with our premium electric
-              vehicle rental service. Flexible plans, zero emissions, unlimited
-              possibilities.
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-5 sm:mb-6 lg:mb-8 px-2">
+              Get an electric vehicle with a dedicated driver for the entire
+              rental. Sit back, relax, and travel sustainably—no driving or
+              charging hassles.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <motion.button
                 whileHover={{scale: 1.05, y: -2}}
                 whileTap={{scale: 0.95}}
-                className="bg-linear-to-r from-sky-500 to-blue-500 hover:from-sky-600 hover:to-sky-700 text-white rounded-full text-lg px-10 py-4 font-semibold transition-all shadow-lg shadow-sky-500/30 hover:shadow-xl hover:shadow-sky-500/40 btn-glow cursor-pointer"
+                className="bg-linear-to-r from-sky-500 to-blue-500 hover:from-sky-600 hover:to-sky-700 text-white rounded-full text-base sm:text-lg px-8 sm:px-10 py-3.5 sm:py-4 font-semibold transition-all shadow-lg shadow-sky-500/30 hover:shadow-xl hover:shadow-sky-500/40 btn-glow cursor-pointer min-h-[48px]"
               >
-                Browse Vehicles
+                Browse Our Fleet
               </motion.button>
               <motion.button
                 whileHover={{scale: 1.05, y: -2}}
                 whileTap={{scale: 0.95}}
-                className="border-2 border-sky-500 text-sky-600 hover:bg-sky-50/50 glass rounded-full text-lg px-10 py-4 font-semibold transition-all shadow-premium hover:shadow-premium-lg cursor-pointer"
+                className="border-2 border-sky-500 text-sky-600 hover:bg-sky-50/50 glass rounded-full text-base sm:text-lg px-8 sm:px-10 py-3.5 sm:py-4 font-semibold transition-all shadow-premium hover:shadow-premium-lg cursor-pointer min-h-[48px]"
               >
                 <a href="tel:+91XXXXXXXXXX">Call Us Now</a>
               </motion.button>
@@ -185,117 +140,31 @@ export default function RentalsPage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{opacity: 0, y: 20}}
-            whileInView={{opacity: 1, y: 0}}
-            viewport={{once: true}}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent">
               Why Rent from Zproo?
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Enjoy premium electric vehicles with unmatched convenience
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto px-2">
+              Premium electric vehicles with a professional driver included—every trip is hassle-free
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, idx) => (
-              <motion.div
+              <div
                 key={idx}
-                initial={{opacity: 0, y: 30}}
-                whileInView={{opacity: 1, y: 0}}
-                viewport={{once: true}}
-                transition={{delay: idx * 0.1}}
-                whileHover={{y: -12, scale: 1.02}}
-                className="text-center p-6 rounded-2xl glass-dark border border-sky-200/30 shadow-premium hover:shadow-premium-lg card-3d cursor-pointer"
+                className="text-center p-6 rounded-2xl glass-dark border border-sky-200/30 shadow-premium hover:shadow-premium-lg transition-all"
               >
-                <motion.div
-                  whileHover={{rotate: 360, scale: 1.1}}
-                  transition={{duration: 0.6, type: "spring"}}
-                  className="w-16 h-16 bg-linear-to-br from-sky-500 to-sky-700 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg relative overflow-hidden"
-                >
-                  <div className="absolute inset-0 shimmer"></div>
-                  <benefit.icon className="h-8 w-8 text-white relative z-10" />
-                </motion.div>
-                <h3 className="text-xl font-bold mb-2 text-gray-900 group-hover:text-sky-600 transition-colors">
+                <div className="w-16 h-16 bg-linear-to-br from-sky-500 to-sky-700 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <benefit.icon className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-2 text-gray-900">
                   {benefit.title}
                 </h3>
                 <p className="text-gray-600">{benefit.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Plans */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-50 to-blue-50">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{opacity: 0, y: 20}}
-            whileInView={{opacity: 1, y: 0}}
-            viewport={{once: true}}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
-              Flexible Rental Plans
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Choose the perfect plan that suits your needs
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {rentalPlans.map((plan, idx) => (
-              <motion.div
-                key={idx}
-                initial={{opacity: 0, y: 30}}
-                whileInView={{opacity: 1, y: 0}}
-                viewport={{once: true}}
-                transition={{delay: idx * 0.1}}
-                whileHover={{y: -12, scale: 1.02}}
-                className={`relative glass rounded-3xl p-8 shadow-premium-lg border ${
-                  plan.popular ? "border-sky-300/50" : "border-sky-200/30"
-                } card-3d cursor-pointer`}
-              >
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                    {plan.duration}
-                  </h3>
-                  <div className="flex items-center justify-center gap-1">
-                    <IndianRupee className="h-8 w-8 text-sky-600" />
-                    <span className="text-5xl font-bold text-gray-900">
-                      {plan.price}
-                    </span>
-                  </div>
-                  <p className="text-gray-600 mt-2">
-                    per {plan.duration.toLowerCase()}
-                  </p>
-                </div>
-
-                <ul className="space-y-4 mb-8">
-                  {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-sky-600 mt-0.5 shrink-0" />
-                      <span className="text-gray-700">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <motion.button
-                  whileHover={{scale: 1.05, y: -2}}
-                  whileTap={{scale: 0.95}}
-                  className={`w-full py-4 rounded-xl font-bold text-lg transition-all ${
-                    plan.popular
-                      ? "bg-linear-to-r from-sky-500 to-blue-500 text-white shadow-lg shadow-sky-500/30 hover:shadow-xl hover:shadow-sky-500/40 btn-glow"
-                      : "border-2 border-sky-500 text-sky-600 hover:bg-sky-50/50 glass"
-                  }`}
-                >
-                  Book Now
-                </motion.button>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -304,28 +173,19 @@ export default function RentalsPage() {
       {/* How It Works */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{opacity: 0, y: 20}}
-            whileInView={{opacity: 1, y: 0}}
-            viewport={{once: true}}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent">
               How It Works
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Rent your electric vehicle in 4 simple steps
+              Book a chauffeur-driven electric rental in 4 simple steps
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {steps.map((step, idx) => (
-              <motion.div
+              <div
                 key={idx}
-                initial={{opacity: 0, y: 30}}
-                whileInView={{opacity: 1, y: 0}}
-                viewport={{once: true}}
-                transition={{delay: idx * 0.1}}
                 className="text-center"
               >
                 <div className="relative inline-block mb-6">
@@ -339,7 +199,7 @@ export default function RentalsPage() {
                   {step.title}
                 </h3>
                 <p className="text-gray-600">{step.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -348,25 +208,21 @@ export default function RentalsPage() {
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-600 to-sky-700">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{opacity: 0, y: 20}}
-            whileInView={{opacity: 1, y: 0}}
-            viewport={{once: true}}
-          >
+          <div>
             <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
               Ready to Go Electric?
             </h2>
             <p className="text-xl text-white/90 mb-10">
-              Book your electric vehicle rental today and experience sustainable
-              mobility
+              Book a chauffeur-driven electric rental and travel in comfort with
+              zero emissions
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button
                 whileHover={{scale: 1.05, y: -2}}
                 whileTap={{scale: 0.95}}
-                className="bg-white text-sky-600 rounded-full text-lg px-10 py-4 font-bold shadow-xl hover:shadow-2xl transition-all btn-glow"
+                className="bg-white text-sky-600 rounded-full text-lg px-10 py-4 font-bold shadow-xl hover:shadow-2xl transition-all btn-glow cursor-pointer"
               >
-                Start Booking
+                Book in App
               </motion.button>
               <Link href="/contact">
                 <motion.button
@@ -378,7 +234,7 @@ export default function RentalsPage() {
                 </motion.button>
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </main>

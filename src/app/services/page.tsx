@@ -7,6 +7,7 @@ import {
   Car,
   Calendar,
   Ticket,
+  Key,
   Shield,
   IndianRupee,
   Clock,
@@ -32,26 +33,42 @@ export default function ServicesPage() {
         "Cashless payments"
       ],
       gradient: "from-sky-500 to-sky-600",
-      link: "/",
+      link: "/ride",
       cta: "Book a Ride"
     },
     {
       icon: Calendar,
       title: "Rent",
-      tagline: "Freedom on Wheels",
+      tagline: "Chauffeur-Driven",
       description:
-        "Rent premium electric vehicles for daily, weekly, or monthly use. Perfect for personal or business needs with flexible plans.",
+        "Rent an EV with a dedicated driver. Sit back and relax for the entire rental—daily, weekly, or monthly.",
       features: [
-        "Daily, weekly & monthly plans",
-        "Premium EV fleet",
-        "Free home delivery & pickup",
-        "Comprehensive insurance included",
-        "Free charging network access",
-        "24/7 roadside assistance"
+        "Professional chauffeur included",
+        "Doorstep pickup & drop",
+        "100% electric fleet",
+        "Fully insured & 24/7 support",
+        "Ideal for meetings & events"
       ],
-      gradient: "from-yellow-400 to-yellow-500",
+      gradient: "from-sky-600 to-sky-700",
       link: "/rentals",
       cta: "Explore Rentals"
+    },
+    {
+      icon: Key,
+      title: "Self Drive",
+      tagline: "You Drive, We Deliver",
+      description:
+        "Rent an electric car and drive yourself. Doorstep delivery, km-included plans, and zero fuel cost.",
+      features: [
+        "You drive—complete freedom",
+        "Daily, weekly & monthly plans",
+        "Free doorstep delivery",
+        "Full insurance & 24/7 assistance",
+        "No fuel cost—100% electric"
+      ],
+      gradient: "from-sky-600 to-sky-700",
+      link: "/self-drive",
+      cta: "Browse Self Drive"
     },
     {
       icon: Ticket,
@@ -102,7 +119,7 @@ export default function ServicesPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-36 lg:pb-28 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-50 via-white to-blue-50 overflow-hidden">
+      <section className="relative pt-20 pb-8 sm:pt-24 sm:pb-10 lg:pt-28 lg:pb-12 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-50 via-white to-blue-50 overflow-hidden min-h-screen flex items-center">
         <motion.div
           className="absolute top-20 left-10 w-96 h-96 bg-sky-400/20 rounded-full blur-3xl"
           animate={{
@@ -116,43 +133,39 @@ export default function ServicesPage() {
           }}
         />
 
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className="max-w-7xl mx-auto relative z-10 w-full">
           <motion.div
             initial={{opacity: 0, y: 20}}
-            animate={{opacity: 1, y: 0}}
-            transition={{duration: 0.8}}
-            className="text-center max-w-4xl mx-auto"
+            animate={{opacity: 1}}
+            transition={{duration: 0.3}}
+            className="text-center max-w-4xl mx-auto px-2"
           >
-            <div className="inline-block mb-6">
-              <span className="px-4 py-2 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold">
+            <div className="inline-block mb-3 sm:mb-4">
+              <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-sky-100 text-sky-700 rounded-full text-xs sm:text-sm font-semibold">
                 ⚡ Electric Mobility Solutions
               </span>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent leading-tight">
               Complete Electric
               <br />
               Transportation Services
             </h1>
 
-            <p className="text-xl sm:text-2xl text-gray-600 mb-10">
-              From daily rides to long-term rentals and smart passes - we offer
-              comprehensive electric mobility solutions for every need
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-5 sm:mb-6 lg:mb-8 px-2">
+              From rides and chauffeur rentals to self-drive EVs and smart
+              passes—we offer electric mobility for every need
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Services Detail Section */}
-      <section className="py-15 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto space-y-32">
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto space-y-16 sm:space-y-24 lg:space-y-32">
           {services.map((service, idx) => (
-            <motion.div
+            <div
               key={idx}
-              initial={{opacity: 0, y: 50}}
-              whileInView={{opacity: 1, y: 0}}
-              viewport={{once: true}}
-              transition={{duration: 0.8}}
               className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
                 idx % 2 === 1 ? "lg:flex-row-reverse" : ""
               }`}
@@ -200,13 +213,8 @@ export default function ServicesPage() {
               <div className={idx % 2 === 1 ? "lg:order-1" : ""}>
                 {idx === 0 ? (
                   // Show vehicle image for Ride service
-                  <motion.div
-                    initial={{opacity: 0, x: idx % 2 === 1 ? -50 : 50}}
-                    whileInView={{opacity: 1, x: 0}}
-                    viewport={{once: true}}
-                    transition={{duration: 0.8}}
-                    whileHover={{scale: 1.05, y: -10}}
-                    className="relative rounded-3xl overflow-hidden shadow-2xl"
+                  <div
+                    className="relative rounded-3xl overflow-hidden shadow-2xl hover:scale-105 transition-transform"
                   >
                     <div className="absolute inset-0 bg-linear-to-br from-sky-500/20 to-blue-500/20 blur-2xl -z-10"></div>
                     <div className="relative glass rounded-3xl p-8 border border-sky-200/30">
@@ -234,11 +242,10 @@ export default function ServicesPage() {
                         />
                       </motion.div>
                     </div>
-                  </motion.div>
+                  </div>
                 ) : (
-                  <motion.div
-                    whileHover={{scale: 1.05}}
-                    className={`rounded-3xl bg-linear-to-br ${service.gradient} p-12 shadow-2xl`}
+                  <div
+                    className={`rounded-3xl bg-linear-to-br ${service.gradient} p-12 shadow-2xl hover:scale-105 transition-transform`}
                   >
                     <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-white">
                       <service.icon className="h-24 w-24 mb-6 mx-auto" />
@@ -249,10 +256,10 @@ export default function ServicesPage() {
                         {service.tagline}
                       </p>
                     </div>
-                  </motion.div>
+                  </div>
                 )}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </section>
@@ -260,12 +267,7 @@ export default function ServicesPage() {
       {/* Why Choose Us */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-50 to-blue-50">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{opacity: 0, y: 20}}
-            whileInView={{opacity: 1, y: 0}}
-            viewport={{once: true}}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent">
               Why Choose Zproo
             </h2>
@@ -273,17 +275,12 @@ export default function ServicesPage() {
               Experience the best in electric mobility with our commitment to
               excellence
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {whyChoose.map((item, idx) => (
-              <motion.div
+              <div
                 key={idx}
-                initial={{opacity: 0, y: 30}}
-                whileInView={{opacity: 1, y: 0}}
-                viewport={{once: true}}
-                transition={{delay: idx * 0.1}}
-                whileHover={{y: -10}}
                 className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all"
               >
                 <div className="w-14 h-14 bg-linear-to-br from-sky-500 to-sky-700 rounded-xl flex items-center justify-center mb-6">
@@ -293,7 +290,7 @@ export default function ServicesPage() {
                   {item.title}
                 </h3>
                 <p className="text-gray-600">{item.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -302,11 +299,7 @@ export default function ServicesPage() {
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-600 to-sky-700">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{opacity: 0, y: 20}}
-            whileInView={{opacity: 1, y: 0}}
-            viewport={{once: true}}
-          >
+          <div>
             <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
               Ready to Go Electric?
             </h2>
@@ -315,13 +308,13 @@ export default function ServicesPage() {
               journey today
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/">
+              <Link href="/ride">
                 <motion.button
                   whileHover={{scale: 1.05}}
                   whileTap={{scale: 0.95}}
                   className="cursor-pointer bg-white text-sky-600 rounded-full text-lg px-10 py-4 font-bold shadow-xl hover:shadow-2xl transition-all"
                 >
-                  Book a Ride
+                  Book in App
                 </motion.button>
               </Link>
               <Link href="/contact">
@@ -334,7 +327,7 @@ export default function ServicesPage() {
                 </motion.button>
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </main>
