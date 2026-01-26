@@ -1,6 +1,7 @@
 "use client";
 
 import {motion} from "framer-motion";
+import {useState, useEffect} from "react";
 
 interface GradientMeshProps {
   className?: string;
@@ -11,6 +12,22 @@ export function GradientMesh({
   className = "",
   intensity = 1
 }: GradientMeshProps) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // Reduce intensity on mobile for better performance
+  const mobileIntensity = isMobile ? intensity * 0.5 : intensity;
+  const blur1 = isMobile ? 20 : 40;
+  const blur2 = isMobile ? 30 : 60;
+
   return (
     <div
       className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}
@@ -26,12 +43,13 @@ export function GradientMesh({
           ]
         }}
         transition={{
-          duration: 10,
+          duration: isMobile ? 15 : 10,
           repeat: Infinity,
           ease: "easeInOut"
         }}
         style={{
-          filter: `blur(${40 * intensity}px)`
+          filter: `blur(${blur1 * mobileIntensity}px)`,
+          willChange: "background"
         }}
       />
       <motion.div
@@ -45,12 +63,13 @@ export function GradientMesh({
           ]
         }}
         transition={{
-          duration: 15,
+          duration: isMobile ? 20 : 15,
           repeat: Infinity,
           ease: "easeInOut"
         }}
         style={{
-          filter: `blur(${60 * intensity}px)`
+          filter: `blur(${blur2 * mobileIntensity}px)`,
+          willChange: "background"
         }}
       />
     </div>

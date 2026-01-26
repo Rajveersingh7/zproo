@@ -332,29 +332,19 @@ export default function ContactPage() {
       {/* Contact Channels */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-50 to-blue-50">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{opacity: 0, y: 20}}
-            whileInView={{opacity: 1, y: 0}}
-            viewport={{once: true}}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent">
               Contact Information
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Reach out directly through these channels
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {contactChannels.map((channel, idx) => (
-              <motion.div
+              <div
                 key={idx}
-                initial={{opacity: 0, y: 30}}
-                whileInView={{opacity: 1, y: 0}}
-                viewport={{once: true}}
-                transition={{delay: idx * 0.1}}
-                whileHover={{y: -10}}
                 className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all"
               >
                 <div
@@ -372,7 +362,7 @@ export default function ContactPage() {
                   {channel.email}
                 </a>
                 <p className="text-gray-600">{channel.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

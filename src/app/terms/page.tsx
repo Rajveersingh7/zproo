@@ -183,9 +183,9 @@ export default function TermsPage() {
       <section className="bg-linear-to-br from-sky-600 to-sky-700 pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <motion.div
-            initial={{opacity: 0, y: 20}}
-            animate={{opacity: 1, y: 0}}
-            transition={{duration: 0.8}}
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            transition={{duration: 0.4, ease: [0.25, 0.1, 0.25, 1]}}
             className="text-center"
           >
             <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 rounded-2xl mb-6">
@@ -205,9 +205,9 @@ export default function TermsPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <motion.div
-            initial={{opacity: 0, y: 20}}
-            animate={{opacity: 1, y: 0}}
-            transition={{duration: 0.6, delay: 0.2}}
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            transition={{duration: 0.4, delay: 0.1, ease: [0.25, 0.1, 0.25, 1]}}
             className="bg-white rounded-3xl shadow-xl p-8 sm:p-12 mb-8"
           >
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
@@ -228,9 +228,9 @@ export default function TermsPage() {
             {sections.map((section, idx) => (
               <motion.div
                 key={idx}
-                initial={{opacity: 0, y: 30}}
-                animate={{opacity: 1, y: 0}}
-                transition={{duration: 0.5, delay: 0.3 + idx * 0.05}}
+                initial={{opacity: 0}}
+                animate={{opacity: 1}}
+                transition={{duration: 0.3, delay: 0.15 + idx * 0.02, ease: [0.25, 0.1, 0.25, 1]}}
                 className="bg-white rounded-3xl shadow-lg p-8 sm:p-10"
               >
                 <h2 className="text-2xl font-bold mb-6 text-gray-900">
@@ -256,9 +256,10 @@ export default function TermsPage() {
 
           {/* Agreement Notice */}
           <motion.div
-            initial={{opacity: 0, y: 20}}
-            whileInView={{opacity: 1, y: 0}}
+            initial={{opacity: 0}}
+            whileInView={{opacity: 1}}
             viewport={{once: true}}
+            transition={{duration: 0.4, ease: [0.25, 0.1, 0.25, 1]}}
             className="mt-12 bg-linear-to-br from-sky-50 to-blue-50 rounded-2xl p-8 border border-sky-100"
           >
             <h3 className="text-2xl font-bold mb-4 text-gray-900 text-center">

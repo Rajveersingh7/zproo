@@ -128,29 +128,29 @@ export default function CareersPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-36 lg:pb-28 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-50 via-white to-blue-50">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative pt-20 pb-8 sm:pt-24 sm:pb-10 lg:pt-28 lg:pb-12 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-sky-50 via-white to-blue-50 min-h-screen flex items-center">
+        <div className="max-w-7xl mx-auto w-full">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-block mb-6">
-              <span className="px-4 py-2 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold">
+            <div className="inline-block mb-3 sm:mb-4">
+              <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-sky-100 text-sky-700 rounded-full text-xs sm:text-sm font-semibold">
                 💼 Join Our Team
               </span>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 bg-linear-to-r from-sky-600 to-sky-700 bg-clip-text text-transparent leading-tight">
               Build the Future of
               <br />
               Electric Mobility
             </h1>
 
-            <p className="text-xl sm:text-2xl text-gray-600 leading-relaxed mb-8">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed mb-5 sm:mb-6 lg:mb-8 px-2">
               Join our mission to revolutionize urban transportation through
               sustainable electric solutions
             </p>
 
             <a
               href="mailto:careers@zproo.com"
-              className="inline-flex items-center gap-2 bg-linear-to-r from-sky-500 to-blue-500 hover:from-sky-600 hover:to-sky-700 text-white rounded-full px-8 py-4 font-semibold shadow-lg transition-all cursor-pointer"
+              className="inline-flex items-center gap-2 bg-linear-to-r from-sky-500 to-blue-500 hover:from-sky-600 hover:to-sky-700 text-white rounded-full text-base sm:text-lg px-8 sm:px-10 py-3.5 sm:py-4 font-semibold shadow-lg transition-all cursor-pointer min-h-[48px]"
             >
               <Mail className="h-5 w-5" />
               Email Your Resume
